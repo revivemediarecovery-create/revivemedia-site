@@ -64,16 +64,16 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
                 <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
-                    <img src="Gemini_Generated_Image_cl739ecl739ecl73.png" alt="ReviveMedia & Recovery Logo" class="h-16 w-auto mix-blend-multiply transition-transform hover:scale-105">
+                    <img src="Image_c1739ec173.png" alt="ReviveMedia & Recovery Logo" class="h-16 w-auto mix-blend-multiply transition-transform hover:scale-105">
                 </div>
                 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="#services" class="text-slate-600 hover:text-brand-600 font-medium transition">Services</a>
-                <a href="#pricing" class="text-slate-600 hover:text-brand-600 font-medium transition">Pricing</a>
-                <a href="#youtube-feature" class="text-slate-600 hover:text-brand-600 font-medium transition">Instant View</a>
-                <a href="#how-it-works" class="text-slate-600 hover:text-brand-600 font-medium transition">How It Works</a>
-                <button onclick="openModal()" class="bg-slate-900 hover:bg-slate-800 text-white px-6 py-2.5 rounded-full font-medium transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                    <a href="#pricing" class="text-slate-600 hover:text-brand-600 font-medium transition">Pricing</a>
+                    <a href="#youtube-feature" class="text-slate-600 hover:text-brand-600 font-medium transition">Instant View</a>
+                    <a href="#how-it-works" class="text-slate-600 hover:text-brand-600 font-medium transition">How It Works</a>
+                    <button onclick="openModal()" class="bg-slate-900 hover:bg-slate-800 text-white px-6 py-2.5 rounded-full font-medium transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
                         Start a Project
                     </button>
                 </div>
@@ -235,7 +235,7 @@
                 <div class="col-span-1 md:col-span-2">
                     <div class="flex items-center mb-6">
                         <div class="bg-white p-2 rounded-xl inline-block">
-                            <img src="Gemini_Generated_Image_cl739ecl739ecl73.png" alt="ReviveMedia Logo" class="h-12 w-auto object-contain" />
+                            <img src="Image_c1739ec173.png" alt="ReviveMedia Logo" class="h-12 w-auto object-contain" />
                         </div>
                     </div>
                     <p class="mb-6 max-w-sm">Saving the past and securing the future. Professional media digitization and logical data recovery services.</p>
@@ -256,29 +256,43 @@
         </div>
     </footer>
 
-    <div id="contactModal" class="fixed inset-0 z-[100] hidden">
+    <div id="contactModal" class="fixed inset-0 z-[100] hidden overflow-y-auto p-4">
         <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
-        <div class="flex items-center justify-center min-h-screen px-4 text-center">
-            <div class="bg-white rounded-2xl shadow-2xl w-full max-w-lg p-8">
+        <div class="relative min-h-screen flex items-center justify-center">
+            <div class="bg-white rounded-2xl shadow-2xl w-full max-w-lg p-8 my-8">
                 <h3 class="text-xl font-bold mb-4">Start Your Project</h3>
                 <form id="intakeForm" class="space-y-4 text-left">
                     <div>
-                        <label class="block text-sm font-medium">Service</label>
-                        <select id="serviceType" class="w-full border p-2 rounded">
+                        <label class="block text-sm font-medium text-slate-700">Service</label>
+                        <select id="serviceType" class="w-full border border-slate-300 p-2 rounded-lg">
                             <option value="media">Media Digitization</option>
                             <option value="data">Data Recovery</option>
                             <option value="both">Both</option>
                         </select>
                     </div>
-                    <input type="text" placeholder="Name" class="w-full border p-2 rounded" required>
-                    <input type="email" placeholder="Email" class="w-full border p-2 rounded" required>
+                    <input type="text" placeholder="Name" class="w-full border border-slate-300 p-2 rounded-lg" required>
+                    <input type="email" placeholder="Email" class="w-full border border-slate-300 p-2 rounded-lg" required>
+                    
                     <div class="flex items-center">
                         <input id="pickupRequired" type="checkbox" class="mr-2">
-                        <label for="pickupRequired">Request Local Pickup ($25)</label>
+                        <label for="pickupRequired" class="text-sm">Request Local Pickup ($25)</label>
                     </div>
-                    <input id="pickupDetails" type="text" placeholder="Preferred Date/Time" class="w-full border p-2 rounded hidden">
-                    <textarea placeholder="Description" class="w-full border p-2 rounded" required></textarea>
-                    <button type="button" onclick="submitForm()" class="w-full bg-brand-600 text-white py-2 rounded">Submit Request</button>
+                    <input id="pickupDetails" type="text" placeholder="Preferred Date/Time for Pickup" class="w-full border border-slate-300 p-2 rounded-lg hidden">
+                    
+                    <textarea placeholder="Please describe your project (Number of tapes, type of media/device, etc.)" class="w-full border border-slate-300 p-2 rounded-lg h-24" required></textarea>
+                    
+                    <!-- Legal Section -->
+                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                        <h4 class="font-bold text-sm mb-2 text-slate-900">Service Agreement & Waiver</h4>
+                        <p class="text-xs text-slate-600 mb-3 italic">I understand that tape repair is a "best-effort" service and not guaranteed. For data recovery, I hold ReviveMedia harmless for any hardware failures during recovery attempts.</p>
+                        <div class="flex items-start">
+                            <input id="legalAgreement" type="checkbox" class="mr-2 mt-1" required>
+                            <label for="legalAgreement" class="text-xs text-slate-700">I acknowledge and agree to the terms above.</label>
+                        </div>
+                        <input type="text" placeholder="Type Full Name to Sign" class="w-full border border-slate-300 p-2 rounded-lg mt-3 text-sm" required>
+                    </div>
+
+                    <button type="submit" class="w-full bg-brand-600 text-white py-3 rounded-lg font-bold hover:bg-brand-700 transition">Submit Request</button>
                 </form>
             </div>
         </div>
@@ -286,12 +300,22 @@
 
     <script>
         const modal = document.getElementById('contactModal');
-        function openModal(t) { modal.classList.remove('hidden'); }
+        function openModal(t) { 
+            modal.classList.remove('hidden'); 
+            if(t) document.getElementById('serviceType').value = t;
+        }
         function closeModal() { modal.classList.add('hidden'); }
+        
         document.getElementById('pickupRequired').onchange = (e) => {
             document.getElementById('pickupDetails').classList.toggle('hidden', !e.target.checked);
         };
-        function submitForm() { closeModal(); }
+        
+        document.getElementById('intakeForm').onsubmit = (e) => {
+            e.preventDefault();
+            alert('Thank you! Your request has been submitted. Kory will reach out shortly.');
+            closeModal();
+        };
+
         window.onscroll = () => {
             document.getElementById('navbar').classList.toggle('shadow-md', window.scrollY > 10);
         };

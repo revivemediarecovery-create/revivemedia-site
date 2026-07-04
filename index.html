@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReviveMedia & Recovery | VHS to Digital & Data Rescue</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9fa',
+                            100: '#d9f0f4',
+                            500: '#2a7f8e', // Logo Cyan
+                            600: '#1d6270',
+                            900: '#0e3a43', // Dark Cyan
+                        },
+                        accent: {
+                            500: '#c5a059', // Logo Gold
+                            600: '#a38242',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Styles for aesthetic enhancements */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+        }
+        .hero-pattern {
+            background-color: #0f172a;
+            background-image: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+        }
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, #2a7f8e, #c5a059);
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 antialiased bg-slate-50">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <img src="watermarked_img_12654759950020398545.png" alt="ReviveMedia & Recovery Logo" class="h-16 w-auto mix-blend-multiply transition-transform hover:scale-105">
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#services" class="text-slate-600 hover:text-brand-600 font-medium transition">Services</a>
+                <a href="#pricing" class="text-slate-600 hover:text-brand-600 font-medium transition">Pricing</a>
+                <a href="#youtube-feature" class="text-slate-600 hover:text-brand-600 font-medium transition">Instant View</a>
+                <a href="#how-it-works" class="text-slate-600 hover:text-brand-600 font-medium transition">How It Works</a>
+                <button onclick="openModal()" class="bg-slate-900 hover:bg-slate-800 text-white px-6 py-2.5 rounded-full font-medium transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                        Start a Project
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-slate-900 focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-1 flex flex-col">
+                <a href="#services" class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50 rounded-md">Services</a>
+                <a href="#youtube-feature" class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50 rounded-md">Instant View</a>
+                <a href="#how-it-works" class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50 rounded-md">How It Works</a>
+                <button onclick="openModal()" class="mt-4 w-full bg-slate-900 text-white px-6 py-3 rounded-md font-medium text-center">Start a Project</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-pattern pt-32 pb-20 md:pt-48 md:pb-32 px-4 relative overflow-hidden">
+        <!-- Abstract background elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+            <div class="absolute -top-[20%] -right-[10%] w-[50%] h-[50%] rounded-full bg-brand-500/10 blur-3xl"></div>
+            <div class="absolute top-[60%] -left-[10%] w-[40%] h-[40%] rounded-full bg-blue-500/10 blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto relative z-10 text-center">
+            <div class="inline-block mb-4 px-4 py-1.5 rounded-full bg-brand-500/20 border border-brand-500/30 text-brand-100 text-sm font-semibold tracking-wide backdrop-blur-sm">
+                VHS to Digital &bull; Professional Data Recovery
+            </div>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6 leading-tight">
+                Your Memories & Data, <br />
+                <span class="gradient-text">Rescued & Ready.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+                We digitize your precious family tapes to modern formats and recover lost files from failing drives. Experience our exclusive <strong>Instant View</strong> YouTube service.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <button onclick="openModal('media')" class="bg-brand-500 hover:bg-brand-400 text-slate-900 px-8 py-4 rounded-full font-bold text-lg transition shadow-[0_0_20px_rgba(20,184,166,0.4)] hover:shadow-[0_0_25px_rgba(20,184,166,0.6)] transform hover:-translate-y-1 flex items-center">
+                    <i class="fa-solid fa-film mr-2"></i> Convert Media
+                </button>
+                <button onclick="openModal('data')" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-full font-bold text-lg transition backdrop-blur-md transform hover:-translate-y-1 flex items-center">
+                    <i class="fa-solid fa-hard-drive mr-2"></i> Recover Data
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- The YouTube USP Section -->
+    <section id="youtube-feature" class="py-20 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-slate-900 rounded-3xl overflow-hidden shadow-2xl flex flex-col lg:flex-row">
+                <div class="lg:w-1/2 p-10 lg:p-16 flex flex-col justify-center">
+                    <div class="w-14 h-14 bg-red-600 rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg shadow-red-600/30">
+                        <i class="fa-brands fa-youtube text-3xl"></i>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
+                        The Instant View Experience
+                    </h2>
+                    <p class="text-slate-300 text-lg mb-6 leading-relaxed">
+                        Don't wait for the mail. The moment your VHS or DVD conversion is complete, we upload it to a private, unlisted YouTube channel created just for you.
+                    </p>
+                    <ul class="space-y-4 text-slate-300">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-circle-check text-brand-500 mt-1 mr-3"></i>
+                            <span><strong>Watch Anywhere:</strong> View on your Smart TV, phone, or tablet immediately.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-circle-check text-brand-500 mt-1 mr-3"></i>
+                            <span><strong>Easy Sharing:</strong> Just send the private link to family members across the globe.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-circle-check text-brand-500 mt-1 mr-3"></i>
+                            <span><strong>Total Privacy:</strong> Videos are unlisted and completely secure.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="lg:w-1/2 bg-slate-800 p-8 lg:p-12 flex items-center justify-center relative overflow-hidden">
+                    <!-- Abstract representation of video UI -->
+                    <div class="w-full max-w-md bg-slate-900 rounded-xl shadow-2xl border border-slate-700 overflow-hidden z-10 transform rotate-2 hover:rotate-0 transition duration-500 cursor-pointer group">
+                        <div class="h-48 bg-slate-800 relative flex items-center justify-center group-hover:bg-slate-700 transition">
+                            <i class="fa-solid fa-play text-5xl text-white/50 group-hover:text-red-500 group-hover:scale-110 transition duration-300"></i>
+                            <div class="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">1:42:05</div>
+                        </div>
+                        <div class="p-4">
+                            <div class="h-4 bg-slate-700 rounded w-3/4 mb-3"></div>
+                            <div class="h-3 bg-slate-700 rounded w-1/2"></div>
+                        </div>
+                    </div>
+                    <!-- Decorative background blur -->
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-red-600/20 rounded-full blur-3xl z-0"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-4">Simple, Transparent Pricing</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Media Conversion Pricing -->
+                <div class="bg-white p-8 rounded-3xl shadow-lg">
+                    <h3 class="text-xl font-bold mb-6 text-brand-600 border-b pb-4">Media Digitization</h3>
+                    <ul class="space-y-3">
+                        <li class="flex justify-between"><span>VHS/Camcorder (1-9 tapes)</span> <span>$20/tape</span></li>
+                        <li class="flex justify-between"><span>VHS/Camcorder (10-19 tapes)</span> <span>$18/tape</span></li>
+                        <li class="flex justify-between"><span>VHS/Camcorder (20+ tapes)</span> <span>$15/tape</span></li>
+                        <li class="flex justify-between"><span>DVD/MiniDVD to Digital</span> <span>$12/disc</span></li>
+                    </ul>
+                </div>
+                <!-- Repair & Recovery -->
+                <div class="bg-white p-8 rounded-3xl shadow-lg">
+                    <h3 class="text-xl font-bold mb-6 text-brand-600 border-b pb-4">Repair & Data Recovery</h3>
+                    <ul class="space-y-3">
+                        <li class="flex justify-between"><span>Basic Tape Repair/Splicing</span> <span>$15/tape</span></li>
+                        <li class="flex justify-between"><span>Mold/Mildew Cleaning</span> <span>$25/tape</span></li>
+                        <li class="flex justify-between"><span>Data Recovery Diagnostic</span> <span>$35</span></li>
+                        <li class="flex justify-between"><span>Advanced Data Recovery</span> <span>$199 - $299</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 bg-white p-8 rounded-3xl shadow-lg border border-brand-100">
+                <h4 class="font-bold text-slate-900 mb-4">🏠 Local Pickup Service</h4>
+                <p class="text-slate-600">Can't make it to us? We offer a local pickup service in the Pleasant Hill/Des Moines area. <strong>Fee: $25 flat rate</strong> for pickup and drop-off coordination.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+                        Accidentally formatted a drive? USB stick stopped recognizing? We use professional non-destructive cloning to rescue your files.
+                    </p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-slate-700 font-medium"><i class="fa-solid fa-check text-green-500 mr-3"></i> USB Flash Drives & SD Cards</li>
+                        <li class="flex items-center text-slate-700 font-medium"><i class="fa-solid fa-check text-green-500 mr-3"></i> External Hard Drives (HDD)</li>
+                        <li class="flex items-center text-slate-700 font-medium"><i class="fa-solid fa-check text-green-500 mr-3"></i> Solid State Drives (SSD)</li>
+                    </ul>
+                    <div class="p-4 bg-green-50 rounded-xl border border-green-100 flex items-start">
+                        <i class="fa-solid fa-shield-halved text-green-600 text-xl mt-1 mr-3"></i>
+                        <p class="text-sm text-slate-700"><strong>The Guarantee:</strong> No Data, No Fee. You only pay the recovery fee if we successfully recover the files you need.*</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works Section -->
+    <section id="how-it-works" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-4">How It Works</h2>
+                <p class="text-lg text-slate-600">A seamless, secure process from drop-off to delivery.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center relative">
+                <!-- Connecting Line (Desktop) -->
+                <div class="hidden md:block absolute top-12 left-[15%] w-[70%] h-0.5 bg-slate-200 z-0"></div>
+
+                <!-- Step 1 -->
+                <div class="relative z-10 flex flex-col items-center">
+                    <div class="w-24 h-24 bg-white border-4 border-slate-100 rounded-full flex items-center justify-center text-3xl text-brand-500 font-bold shadow-lg mb-6">
+                        1
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Drop Off / Ship</h3>
+                    <p class="text-slate-600">Fill out our intake form online and securely package your media or failing drives for our lab.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative z-10 flex flex-col items-center">
+                    <div class="w-24 h-24 bg-brand-500 border-4 border-brand-100 rounded-full flex items-center justify-center text-3xl text-white font-bold shadow-lg mb-6 shadow-brand-500/40">
+                        2
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">We Process</h3>
+                    <p class="text-slate-600">We carefully digitize your tapes using professional hardware or safely clone your failing drives.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative z-10 flex flex-col items-center">
+                    <div class="w-24 h-24 bg-white border-4 border-slate-100 rounded-full flex items-center justify-center text-3xl text-slate-900 font-bold shadow-lg mb-6">
+                        3
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Instant Delivery</h3>
+                    <p class="text-slate-600">Get your private YouTube link immediately, followed by the return of your originals and a new USB drive.</p>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                 <button onclick="openModal()" class="bg-slate-900 hover:bg-slate-800 text-white px-10 py-4 rounded-full font-bold text-lg transition shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                    Start Your Order Now
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 pt-16 pb-8 text-slate-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-white p-2 rounded-xl inline-block">
+                            <img src="watermarked_img_12654759950020398545.png" alt="ReviveMedia Logo" class="h-12 w-auto object-contain" />
+                        </div>
+                    </div>
+                    <p class="mb-6 max-w-sm">Saving the past and securing the future. Professional media digitization and logical data recovery services.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-500 hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-500 hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-red-600 hover:text-white transition"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-brand-400 transition">VHS to Digital</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition">Camcorder Tapes</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition">DVD Extraction</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition">USB/SD Recovery</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition">Hard Drive Recovery</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Contact</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start"><i class="fa-solid fa-user mt-1 mr-3 text-slate-500"></i> Kory Fuerstenberg</li>
+                        <li class="flex items-start"><i class="fa-solid fa-envelope mt-1 mr-3 text-slate-500"></i> <a href="mailto:revivemediarecovery@gmail.com" class="hover:text-brand-400 transition">revivemediarecovery@gmail.com</a></li>
+                        <li class="flex items-start"><i class="fa-solid fa-phone mt-1 mr-3 text-slate-500"></i> (515) 216-4020</li>
+                        <li class="flex items-start"><i class="fa-solid fa-location-dot mt-1 mr-3 text-slate-500"></i> 2255 SE 60th St.<br>Pleasant Hill, IA 50327</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+                <p>&copy; 2026 ReviveMedia & Recovery. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition">Terms of Service</a>
+                    <a href="#" class="hover:text-white transition">Waiver & Liability</a>
+                </div>
+            </div>
+            <p class="text-xs text-slate-600 mt-6 max-w-4xl">*Data Recovery: Small diagnostic fee applies. "No Data, No Fee" refers to the primary recovery charge; if we cannot extract usable files, the main recovery fee is waived. Mechanical/Clean-room failures will be referred to specialized partners.</p>
+        </div>
+    </footer>
+
+    <!-- Custom Modal (Instead of alert()) -->
+    <div id="contactModal" class="fixed inset-0 z-[100] hidden">
+        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
+        <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:p-0">
+            <div class="relative bg-white rounded-2xl text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:max-w-lg w-full">
+                <div class="absolute top-0 right-0 pt-4 pr-4">
+                    <button onclick="closeModal()" class="text-slate-400 hover:text-slate-500 focus:outline-none">
+                        <i class="fa-solid fa-xmark text-2xl"></i>
+                    </button>
+                </div>
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start">
+                        <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-brand-100 sm:mx-0 sm:h-10 sm:w-10">
+                            <i class="fa-solid fa-clipboard-list text-brand-600"></i>
+                        </div>
+                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
+                            <h3 class="text-xl leading-6 font-bold text-slate-900 mb-2" id="modal-title">
+                                Start Your Project
+                            </h3>
+                            <div class="mt-2">
+                                <p class="text-sm text-slate-500 mb-4">
+                                    Fill out this quick form, and we'll send you intake instructions.
+                                </p>
+                                <form id="intakeForm" class="space-y-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-slate-700">Service Needed</label>
+                                        <select id="serviceType" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-slate-300 bg-slate-50 focus:outline-none focus:ring-brand-500 focus:border-brand-500 sm:text-sm rounded-md border">
+                                            <option value="media">Media Digitization (VHS, DVD, etc.)</option>
+                                            <option value="data">Data Recovery (USB, HDD, etc.)</option>
+                                            <option value="both">Both Services</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-slate-700">Name</label>
+                                        <input type="text" class="mt-1 block w-full border border-slate-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-brand-500 focus:border-brand-500 sm:text-sm" placeholder="Jane Doe" required>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-slate-700">Email</label>
+                                        <input type="email" class="mt-1 block w-full border border-slate-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-brand-500 focus:border-brand-500 sm:text-sm" placeholder="jane@example.com" required>
+                                    </div>
+                                    <!-- Pickup Checkbox -->
+                                    <div class="flex items-center">
+                                        <input id="pickupRequired" type="checkbox" class="h-4 w-4 text-brand-600 focus:ring-brand-500 border-slate-300 rounded">
+                                        <label for="pickupRequired" class="ml-2 block text-sm text-slate-900">Request Local Pickup ($25 fee)</label>
+                                    </div>
+                                    <div id="pickupDetails" class="hidden">
+                                        <label class="block text-sm font-medium text-slate-700">Preferred Pickup Date/Time</label>
+                                        <input type="text" class="mt-1 block w-full border border-slate-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-brand-500 focus:border-brand-500 sm:text-sm" placeholder="E.g., Tuesday after 5pm">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-slate-700">Brief Description</label>
+                                        <textarea rows="3" class="mt-1 block w-full border border-slate-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-brand-500 focus:border-brand-500 sm:text-sm" placeholder="E.g., I have 10 home video VHS tapes..." required></textarea>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                    <button type="button" onclick="submitForm()" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-brand-600 text-base font-medium text-white hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500 sm:ml-3 sm:w-auto sm:text-sm transition">
+                        Submit Request
+                    </button>
+                    <button type="button" onclick="closeModal()" class="mt-3 w-full inline-flex justify-center rounded-md border border-slate-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-slate-700 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm transition">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Message Box (Hidden) -->
+    <div id="successMsg" class="fixed bottom-5 right-5 bg-slate-900 text-white px-6 py-4 rounded-xl shadow-2xl transform translate-y-20 opacity-0 transition-all duration-300 z-50 flex items-center">
+        <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-3">
+            <i class="fa-solid fa-check text-white"></i>
+        </div>
+        <div>
+            <h4 class="font-bold">Request Received!</h4>
+            <p class="text-sm text-slate-300">We'll be in touch shortly.</p>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Navbar styling on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-md');
+                nav.classList.replace('bg-transparent', 'glass-nav');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+
+        // Modal Logic
+        const modal = document.getElementById('contactModal');
+        const select = document.getElementById('serviceType');
+        const pickupCheckbox = document.getElementById('pickupRequired');
+        const pickupDetails = document.getElementById('pickupDetails');
+
+        pickupCheckbox.addEventListener('change', () => {
+            pickupDetails.classList.toggle('hidden', !pickupCheckbox.checked);
+        });
+
+        function openModal(type = 'both') {
+            modal.classList.remove('hidden');
+            if(type === 'media') select.value = 'media';
+            if(type === 'data') select.value = 'data';
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+        }
+
+        function submitForm() {
+            // Basic simulation of form submission instead of alert()
+            const form = document.getElementById('intakeForm');
+            if(!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+            
+            closeModal();
+            form.reset();
+            
+            // Show success message
+            const msg = document.getElementById('successMsg');
+            msg.classList.remove('translate-y-20', 'opacity-0');
+            
+            setTimeout(() => {
+                msg.classList.add('translate-y-20', 'opacity-0');
+            }, 4000);
+        }
+    </script>
+</body>
+</html>

@@ -80,7 +80,7 @@
 
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-slate-900 focus:outline-none p-2">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-slate-900 focus:outline-none p-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
                         <i class="fa-solid fa-bars text-2xl"></i>
                     </button>
                 </div>
@@ -154,16 +154,9 @@
                         </li>
                     </ul>
                 </div>
-                <div class="lg:w-1/2 bg-slate-800 p-8 lg:p-12 flex items-center justify-center relative overflow-hidden">
-                    <div class="w-full max-w-md bg-slate-900 rounded-xl shadow-2xl border border-slate-700 overflow-hidden z-10 transform rotate-2 hover:rotate-0 transition duration-500 cursor-pointer group">
-                        <div class="h-48 bg-slate-800 relative flex items-center justify-center group-hover:bg-slate-700 transition">
-                            <i class="fa-solid fa-play text-5xl text-white/50 group-hover:text-red-500 group-hover:scale-110 transition duration-300"></i>
-                            <div class="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">1:42:05</div>
-                        </div>
-                        <div class="p-4">
-                            <div class="h-4 bg-slate-700 rounded w-3/4 mb-3"></div>
-                            <div class="h-3 bg-slate-700 rounded w-1/2"></div>
-                        </div>
+                <div class="lg:w-1/2 bg-slate-800 p-8 lg:p-12 flex items-center justify-center">
+                    <div class="w-full aspect-video rounded-xl overflow-hidden shadow-2xl border-4 border-slate-700">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/Olpch-iWdzo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -183,7 +176,7 @@
                         <li class="flex justify-between"><span>VHS/Camcorder (10-19 tapes)</span> <span>$18/tape</span></li>
                         <li class="flex justify-between"><span>VHS/Camcorder (20+ tapes)</span> <span>$15/tape</span></li>
                         <li class="flex justify-between"><span>DVD/MiniDVD to Digital</span> <span>$12/disc</span></li>
-                        <li class="text-sm text-slate-500 mt-2 italic">*Output: MP4, MOV, AVI, and more!</li>
+                        <li class="text-sm text-slate-500 mt-2 italic">*Output formats: MP4, MOV, AVI, and more.</li>
                     </ul>
                 </div>
                 <div class="bg-white p-8 rounded-3xl shadow-lg">
@@ -274,7 +267,7 @@
                     <input type="email" placeholder="Email" class="w-full border border-slate-300 p-2 rounded-lg" required>
                     
                     <div class="flex items-center">
-                        <input id="pickupRequired" type="checkbox" class="mr-2">
+                        <input id="pickupRequired" type="checkbox" class="mr-2" onchange="document.getElementById('pickupDetails').classList.toggle('hidden', !this.checked)">
                         <label for="pickupRequired" class="text-sm">Request Local Pickup ($25)</label>
                     </div>
                     <input id="pickupDetails" type="text" placeholder="Preferred Date/Time for Pickup" class="w-full border border-slate-300 p-2 rounded-lg hidden">
@@ -305,10 +298,6 @@
             if(t) document.getElementById('serviceType').value = t;
         }
         function closeModal() { modal.classList.add('hidden'); }
-        
-        document.getElementById('pickupRequired').onchange = (e) => {
-            document.getElementById('pickupDetails').classList.toggle('hidden', !e.target.checked);
-        };
         
         document.getElementById('intakeForm').onsubmit = (e) => {
             e.preventDefault();

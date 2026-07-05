@@ -1,124 +1,179 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReviveMedia & Recovery | Preserve. Restore. Connect.</title>
+    <title>ReviveMedia & Recovery | VHS to Digital & Data Rescue</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9fa',
+                            100: '#d9f0f4',
+                            500: '#2a7f8e', 
+                            600: '#1d6270',
+                            900: '#0e3a43',
+                        },
+                        accent: {
+                            500: '#c5a059',
+                            600: '#a38242',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
-        .hero-bg { background: linear-gradient(135deg, #0f172a 0%, #115e59 100%); }
-        html { scroll-behavior: smooth; }
+        .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(229, 231, 235, 0.5); }
+        .hero-pattern { background-color: #0f172a; background-image: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%); }
+        .gradient-text { background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-image: linear-gradient(to right, #2a7f8e, #c5a059); }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="font-sans text-slate-800 antialiased bg-slate-50">
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-28">
-                <img src="Image_c1739ec173.png" alt="ReviveMedia Logo" class="h-24 w-auto object-contain">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center cursor-pointer bg-white rounded-xl p-1 shadow-sm border border-slate-100" onclick="window.scrollTo(0,0)">
+                    <img src="Image_c1739ec173.png" alt="ReviveMedia & Recovery Logo" class="h-16 w-auto transition-transform hover:scale-105">
+                </div>
                 <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#pricing" class="text-gray-700 hover:text-teal-600 font-medium">Pricing</a>
-                    <button onclick="openModal()" class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-2 rounded-full font-semibold">Start Project</button>
+                    <a href="#services" class="text-slate-600 hover:text-brand-600 font-medium transition">Services</a>
+                    <a href="#pricing" class="text-slate-600 hover:text-brand-600 font-medium transition">Pricing</a>
+                    <a href="#youtube-feature" class="text-slate-600 hover:text-brand-600 font-medium transition">Instant View</a>
+                    <button onclick="openModal()" class="bg-slate-900 hover:bg-slate-800 text-white px-6 py-2.5 rounded-full font-medium transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                        Start a Project
+                    </button>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <div class="hero-bg text-white pt-40 pb-20 text-center">
-        <h1 class="text-5xl font-extrabold mb-6">Don't Let Your Family Memories Fade Away</h1>
-        <p class="text-xl text-teal-100 mb-10 max-w-2xl mx-auto">Digitization & Data Recovery with "Instant View" YouTube sharing. View your memories anywhere, shared with anyone.</p>
-        <button onclick="openModal()" class="bg-white text-teal-700 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all">Digitize My Tapes</button>
-    </div>
-
-    <!-- Video Preview Section -->
-    <div id="preview" class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold mb-8">See The Magic: A Real Family Memory Restored</h2>
-            <p class="mb-8 text-gray-600 italic">Every digitization includes our exclusive <b>Instant View</b> private YouTube link so anyone in your family can view it anywhere!</p>
-            <div class="max-w-4xl mx-auto aspect-video">
-                <iframe class="w-full h-full rounded-2xl shadow-2xl" src="https://www.youtube.com/embed/Olpch-iWdzo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <section class="hero-pattern pt-32 pb-20 md:pt-48 md:pb-32 px-4 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto relative z-10 text-center">
+            <div class="inline-block mb-4 px-4 py-1.5 rounded-full bg-brand-500/20 border border-brand-500/30 text-brand-100 text-sm font-semibold tracking-wide backdrop-blur-sm">
+                VHS to Digital &bull; Professional Data Recovery
+            </div>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6 leading-tight">
+                Your Memories & Data, <br />
+                <span class="gradient-text">Rescued & Ready.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+                We digitize your precious family tapes to modern formats and recover lost files from failing drives. Experience our exclusive <strong>Instant View</strong> YouTube service.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <button onclick="openModal()" class="bg-brand-500 hover:bg-brand-400 text-slate-900 px-8 py-4 rounded-full font-bold text-lg transition shadow-[0_0_20px_rgba(20,184,166,0.4)] hover:shadow-[0_0_25px_rgba(20,184,166,0.6)] transform hover:-translate-y-1 flex items-center">
+                    Digitize My Tapes
+                </button>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Pricing Section -->
-    <div id="pricing" class="py-20">
-        <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-16">Transparent Pricing</h2>
-            <div class="grid md:grid-cols-3 gap-8">
+    <section id="youtube-feature" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-slate-900 rounded-3xl overflow-hidden shadow-2xl flex flex-col lg:flex-row">
+                <div class="lg:w-1/2 p-10 lg:p-16 flex flex-col justify-center">
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold text-white mb-4">The Instant View Experience</h2>
+                    <p class="text-slate-300 text-lg mb-6 leading-relaxed">
+                        Every digitization includes our exclusive <b>Instant View</b> service. We upload your tapes to a private, unlisted YouTube channel so you can watch your memories anywhere and share them with anyone, instantly.
+                    </p>
+                </div>
+                <div class="lg:w-1/2 bg-slate-800 p-8 lg:p-12 flex items-center justify-center">
+                    <div class="w-full aspect-video rounded-xl overflow-hidden shadow-2xl border-4 border-slate-700">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/Olpch-iWdzo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-heading font-bold text-center text-slate-900 mb-16">Transparent Pricing</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Digitization -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-teal-600">
-                    <h3 class="text-2xl font-bold mb-4">Video Digitization</h3>
-                    <p class="mb-4 text-sm text-gray-600 italic">Includes our exclusive <b>Instant View</b> private YouTube link for sharing anywhere!</p>
-                    <ul class="space-y-2 text-gray-700 mb-6">
-                        <li>1-9 Tapes: $20/ea</li>
-                        <li>10-19 Tapes: $18/ea</li>
-                        <li>20+ Tapes: $15/ea</li>
+                <div class="bg-white p-8 rounded-3xl shadow-lg">
+                    <h3 class="text-xl font-bold mb-6 text-brand-600 border-b pb-4">Video Digitization</h3>
+                    <ul class="space-y-3">
+                        <li class="flex justify-between"><span>1-9 Tapes</span> <span>$20/ea</span></li>
+                        <li class="flex justify-between"><span>10-19 Tapes</span> <span>$18/ea</span></li>
+                        <li class="flex justify-between"><span>20+ Tapes (Bulk)</span> <span>$15/ea</span></li>
                     </ul>
                 </div>
                 <!-- Storage -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg">
-                    <h3 class="text-2xl font-bold mb-4">Storage Options</h3>
-                    <p class="text-sm text-gray-600 mb-4">Customer-provided USB/Drive: <b>FREE</b></p>
-                    <ul class="space-y-3 text-gray-700">
-                        <li>16GB USB: $15</li>
-                        <li>32GB USB: $25</li>
-                        <li>64GB USB: $35</li>
+                <div class="bg-white p-8 rounded-3xl shadow-lg">
+                    <h3 class="text-xl font-bold mb-6 text-brand-600 border-b pb-4">Storage Options</h3>
+                    <ul class="space-y-3">
+                        <li class="flex justify-between"><span>Customer Provided Drive</span> <span>FREE</span></li>
+                        <li class="flex justify-between"><span>16GB Flash Drive</span> <span>$15</span></li>
+                        <li class="flex justify-between"><span>32GB Flash Drive</span> <span>$25</span></li>
+                        <li class="flex justify-between"><span>64GB Flash Drive</span> <span>$35</span></li>
+                        <li class="flex justify-between"><span>1TB SSD</span> <span>$199</span></li>
                     </ul>
                 </div>
-                <!-- Repair -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg">
-                    <h3 class="text-2xl font-bold mb-4">Add-Ons</h3>
-                    <ul class="space-y-3 text-gray-700">
-                        <li>Basic Tape Repair: $15</li>
-                        <li>Mold/Mildew Cleaning: $25</li>
+                <!-- Repairs -->
+                <div class="bg-white p-8 rounded-3xl shadow-lg">
+                    <h3 class="text-xl font-bold mb-6 text-brand-600 border-b pb-4">Add-Ons</h3>
+                    <ul class="space-y-3">
+                        <li class="flex justify-between"><span>Basic Tape Repair</span> <span>$15</span></li>
+                        <li class="flex justify-between"><span>Mold/Mildew Cleaning</span> <span>$25</span></li>
                     </ul>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Intake Modal -->
-    <div id="intakeModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-gray-500 bg-opacity-75">
-        <div class="bg-white rounded-lg p-8 w-full max-w-lg shadow-xl max-h-[90vh] overflow-y-auto">
-            <h2 class="text-2xl font-bold mb-4">Start Your Project</h2>
-            <p class="mb-4 text-sm text-gray-600">I will reach out to you ASAP once your request is received.</p>
-            <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
-                <input type="hidden" name="access_key" value="07216999-56c7-46f5-a328-9ea6eddbf597">
-                
-                <input type="text" name="Name" placeholder="Full Name" required class="w-full p-2 border rounded">
-                <input type="email" name="Email" placeholder="Email Address" required class="w-full p-2 border rounded">
-                <input type="tel" name="Phone" placeholder="Phone Number" required class="w-full p-2 border rounded">
-                <textarea name="Address" placeholder="Physical Address" required class="w-full p-2 border rounded"></textarea>
-                
-                <label class="block text-sm font-bold">Preferred Contact Method:</label>
-                <select name="Preferred Contact" class="w-full p-2 border rounded">
-                    <option value="Phone Call">Phone Call</option>
-                    <option value="Text Message">Text Message</option>
-                    <option value="Email">Email</option>
-                </select>
-
-                <button type="submit" class="w-full bg-teal-600 text-white py-2 rounded">Submit Request</button>
-                <button type="button" onclick="closeModal()" class="w-full bg-gray-200 py-2 rounded">Cancel</button>
-            </form>
-        </div>
-    </div>
-
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-gray-400 font-semibold mb-2">ReviveMedia & Recovery</p>
-            <p class="text-sm text-gray-500">Preserve. Restore. Connect.</p>
-            <p class="text-xs text-gray-600 mt-4">&copy; 2026 ReviveMedia & Recovery. All rights reserved.</p>
+    <footer class="bg-slate-950 pt-16 pb-8 text-slate-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="mb-4">Kory Fuerstenberg | (515) 216-4020 | revivemediarecovery@gmail.com</p>
+            <p>&copy; 2026 ReviveMedia & Recovery. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- Intake Modal -->
+    <div id="contactModal" class="fixed inset-0 z-[100] hidden overflow-y-auto p-4">
+        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
+        <div class="relative min-h-screen flex items-center justify-center">
+            <div class="bg-white rounded-2xl shadow-2xl w-full max-w-lg p-8 my-8">
+                <h3 class="text-xl font-bold mb-2">Start Your Project</h3>
+                <p class="text-sm text-slate-600 mb-6">I will reach out to you ASAP once your request is received.</p>
+                <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4 text-left">
+                    <input type="hidden" name="access_key" value="07216999-56c7-46f5-a328-9ea6eddbf597">
+                    <input type="text" name="Name" placeholder="Full Name" required class="w-full border border-slate-300 p-2 rounded-lg">
+                    <input type="email" name="Email" placeholder="Email Address" required class="w-full border border-slate-300 p-2 rounded-lg">
+                    <input type="tel" name="Phone" placeholder="Phone Number" required class="w-full border border-slate-300 p-2 rounded-lg">
+                    <textarea name="Address" placeholder="Physical Address" required class="w-full border border-slate-300 p-2 rounded-lg"></textarea>
+                    
+                    <label class="block text-sm font-bold">Preferred Contact Method:</label>
+                    <select name="Preferred_Contact" class="w-full border border-slate-300 p-2 rounded-lg">
+                        <option value="Phone Call">Phone Call</option>
+                        <option value="Text Message">Text Message</option>
+                        <option value="Email">Email</option>
+                    </select>
+
+                    <button type="submit" class="w-full bg-brand-600 text-white py-3 rounded-lg font-bold hover:bg-brand-700 transition">Submit Request</button>
+                    <button type="button" onclick="closeModal()" class="w-full bg-slate-100 py-2 rounded-lg">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <script>
-        function openModal() { document.getElementById('intakeModal').classList.remove('hidden'); }
-        function closeModal() { document.getElementById('intakeModal').classList.add('hidden'); }
+        const modal = document.getElementById('contactModal');
+        function openModal() { modal.classList.remove('hidden'); }
+        function closeModal() { modal.classList.add('hidden'); }
     </script>
 </body>
 </html>

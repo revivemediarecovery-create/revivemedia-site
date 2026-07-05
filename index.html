@@ -86,10 +86,10 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Video Conversion -->
-                <div class="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow flex flex-col">
+                <div class="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow">
                     <div class="text-teal-600 text-4xl mb-4"><i class="fas fa-video"></i></div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-2">Tape Digitization</h3>
-                    <p class="text-gray-500 mb-4">Convert VHS, VHS-C, Hi8, and Camcorder tapes to modern digital formats (MP4, MOV, AVI, etc.)</p>
+                    <p class="text-gray-500 mb-6">Convert VHS, VHS-C, Hi8, and Camcorder tapes to modern digital formats (MP4, MOV, AVI, etc.)</p>
                     
                     <div class="bg-gray-50 rounded-lg p-4 mb-6 border border-gray-100">
                         <div class="flex justify-between items-center mb-2 border-b border-gray-200 pb-2">
@@ -105,59 +105,40 @@
                             <span class="font-extrabold text-teal-700">$15 <span class="text-sm font-normal opacity-75">/ tape</span></span>
                         </div>
                     </div>
-
-                    <ul class="space-y-3 mb-4 mt-auto">
-                        <li class="flex items-center text-gray-600"><i class="fas fa-check text-teal-500 mr-2"></i> Quality enhancement tracking</li>
-                        <li class="flex items-center text-gray-600"><i class="fas fa-check text-teal-500 mr-2"></i> Trimming blank footage</li>
-                        <li class="flex items-center text-gray-600"><i class="fas fa-check text-teal-500 mr-2"></i> Output to multiple formats</li>
-                    </ul>
                 </div>
 
                 <!-- Media Repair -->
-                <div class="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow border-t-4 border-t-teal-500 flex flex-col">
+                <div class="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow border-t-4 border-t-teal-500">
                     <div class="text-teal-600 text-4xl mb-4"><i class="fas fa-tools"></i></div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-2">Tape Repair & Cleaning</h3>
                     <p class="text-gray-500 mb-6">We'll fix wrinkled, snapped, or moldy tapes before attempting to digitize them.</p>
                     <div class="text-4xl font-extrabold text-gray-900 mb-6">$20 <span class="text-lg font-medium text-gray-500">/ tape</span></div>
-                    <ul class="space-y-3 mb-8 mt-auto">
+                    <ul class="space-y-3 mb-8">
                         <li class="flex items-center text-gray-600"><i class="fas fa-check text-teal-500 mr-2"></i> Broken tape splicing</li>
                         <li class="flex items-center text-gray-600"><i class="fas fa-check text-teal-500 mr-2"></i> Chemical mold cleaning</li>
-                        <li class="flex items-start text-sm text-gray-400 mt-4"><i class="fas fa-info-circle mt-1 mr-2"></i> Note: Repair success is not guaranteed due to physical age, but we will always try our best!</li>
                     </ul>
                 </div>
 
                 <!-- Delivery & Storage -->
-                <div class="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow flex flex-col">
+                <div class="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow">
                     <div class="text-teal-600 text-4xl mb-4"><i class="fas fa-hdd"></i></div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-2">Storage & Delivery</h3>
                     <p class="text-gray-500 mb-6">How would you like your files returned? Provide your own drive for free, or let us provide one.</p>
                     
-                    <ul class="space-y-3 mb-6 mt-auto">
+                    <ul class="space-y-3 mb-6">
                         <li class="flex items-center justify-between text-gray-800 font-bold bg-teal-50 p-2 rounded">
                             <span>Customer Provided Drive</span>
                             <span class="text-teal-600">FREE</span>
                         </li>
                         <li class="flex items-center justify-between text-gray-600">
-                            <span>16GB Flash Drive (10-15 hrs)</span>
+                            <span>16GB Flash Drive</span>
                             <span class="font-bold">+$15</span>
-                        </li>
-                        <li class="flex items-center justify-between text-gray-600">
-                            <span>32GB Flash Drive (20-30 hrs)</span>
-                            <span class="font-bold">+$25</span>
-                        </li>
-                        <li class="flex items-center justify-between text-gray-600">
-                            <span>64GB Flash Drive (40-60 hrs)</span>
-                            <span class="font-bold">+$35</span>
                         </li>
                         <li class="flex items-center justify-between text-gray-600">
                             <span>1TB Solid State Drive</span>
                             <span class="font-bold">+$199</span>
                         </li>
                     </ul>
-                    <div class="pt-4 border-t border-gray-100">
-                        <p class="text-gray-700 font-semibold mb-1"><i class="fas fa-car text-teal-500 mr-2"></i> Local Pickup Service</p>
-                        <p class="text-sm text-gray-500">Don't want to drive? We'll come pick up your items! <strong>$20 Flat Rate</strong>.</p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -176,12 +157,12 @@
                     <!-- Inputs -->
                     <div class="space-y-6">
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Number of Tapes to Digitize <span class="text-teal-600 font-normal">(Auto-calculates bulk rate)</span></label>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Number of Tapes to Digitize</label>
                             <input type="number" id="calc-tapes" min="0" value="0" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500" oninput="calculateTotal()">
                         </div>
 
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Tapes Needing Repair/Mold Cleaning ($20/ea)</label>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Tapes Needing Repair ($20/ea)</label>
                             <input type="number" id="calc-repairs" min="0" value="0" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500" oninput="calculateTotal()">
                         </div>
 
@@ -190,8 +171,6 @@
                             <select id="calc-storage" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500" onchange="calculateTotal()">
                                 <option value="0">I will provide my own USB/Drive ($0 - FREE)</option>
                                 <option value="15">ReviveMedia Provides: 16GB Flash Drive (+$15)</option>
-                                <option value="25">ReviveMedia Provides: 32GB Flash Drive (+$25)</option>
-                                <option value="35">ReviveMedia Provides: 64GB Flash Drive (+$35)</option>
                                 <option value="199">ReviveMedia Provides: 1TB Solid State Drive (+$199)</option>
                             </select>
                         </div>
@@ -214,169 +193,48 @@
                         <button onclick="transferQuoteToModal()" class="w-full bg-white text-teal-700 hover:bg-gray-100 px-6 py-3 rounded-lg font-bold transition-colors shadow relative z-10">
                             Start This Project
                         </button>
-                        <p class="text-xs text-teal-200 mt-4 text-center relative z-10">*Estimate only. Final price confirmed upon physical inspection of items.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Reviews Section -->
-    <div id="reviews" class="py-20 bg-gray-50 border-t border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Client Success Stories</h2>
-                <p class="text-lg text-gray-600">See what families are saying about their recovered memories.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Review 1 -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                    <div class="flex text-yellow-400 mb-3">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-600 italic mb-4">"I had a box of 15 VHS tapes sitting in my basement for 20 years. I used the pickup service, and within a week I was crying watching my kids' first steps on my iPad. Incredible service!"</p>
-                    <p class="text-gray-900 font-bold">- Sarah M.</p>
-                    <p class="text-xs text-teal-600 font-semibold uppercase tracking-wide mt-1">Video Digitization & Pickup</p>
-                </div>
-
-                <!-- Review 2 -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                    <div class="flex text-yellow-400 mb-3">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-600 italic mb-4">"A couple of my old camcorder tapes were visibly moldy and I thought they were ruined forever. They managed to clean them and salvage almost the entire recording. So grateful!"</p>
-                    <p class="text-gray-900 font-bold">- James T.</p>
-                    <p class="text-xs text-teal-600 font-semibold uppercase tracking-wide mt-1">Tape Repair & Cleaning</p>
-                </div>
-
-                <!-- Review 3 -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                    <div class="flex text-yellow-400 mb-3">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-600 italic mb-4">"Super transparent pricing and easy to work with. I supplied my own hard drive and there were no hidden fees at all. Highly recommend for any data recovery or VHS conversion."</p>
-                    <p class="text-gray-900 font-bold">- Emily R.</p>
-                    <p class="text-xs text-teal-600 font-semibold uppercase tracking-wide mt-1">Video Digitization</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
-            <div class="mb-6 md:mb-0">
-                <img src="Image_c1739ec173.png" alt="ReviveMedia Logo" class="h-16 w-auto object-contain">
-            </div>
-            <div class="text-center md:text-right">
-                <p class="text-gray-400">Preserve. Restore. Connect.</p>
-                <p class="text-sm text-gray-500 mt-2">&copy; 2026 ReviveMedia & Recovery. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
 
     <!-- Intake Form Modal -->
     <div id="intakeModal" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
         <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
             <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true" onclick="closeModal()"></div>
-            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
             <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-2xl sm:w-full">
                 <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                    <div class="flex justify-between items-center mb-5 border-b pb-4">
-                        <h3 class="text-2xl leading-6 font-bold text-gray-900" id="modal-title">Start Your Project</h3>
-                        <button onclick="closeModal()" class="text-gray-400 hover:text-gray-500">
-                            <i class="fas fa-times text-xl"></i>
-                        </button>
-                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Start Your Project</h3>
+                    <p class="text-sm text-gray-600 mb-6">Fill out the details below. I will reach out to you ASAP to discuss your project!</p>
                     
-                    <form action="https://api.web3forms.com/submit" method="POST" onsubmit="return validateForm(event)" class="space-y-6 max-h-[70vh] overflow-y-auto pr-2">
-                        
+                    <form action="https://api.web3forms.com/submit" method="POST" onsubmit="return validateForm(event)" class="space-y-4 max-h-[60vh] overflow-y-auto pr-2">
                         <input type="hidden" name="access_key" value="07216999-56c7-46f5-a328-9ea6eddbf597">
-                        <input type="hidden" name="subject" value="New Project Request from ReviveMedia Site!">
-                        <input type="hidden" name="redirect" value="https://web3forms.com/success">
-
-                        <!-- Contact Info -->
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700">First Name</label>
-                                <input type="text" name="First Name" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-teal-500 focus:border-teal-500">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700">Last Name</label>
-                                <input type="text" name="Last Name" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-teal-500 focus:border-teal-500">
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <input type="text" name="First Name" placeholder="First Name" required class="border p-2 rounded w-full">
+                            <input type="text" name="Last Name" placeholder="Last Name" required class="border p-2 rounded w-full">
+                        </div>
+                        <input type="email" name="Email" placeholder="Email Address" required class="border p-2 rounded w-full">
+                        <input type="tel" name="Phone" placeholder="Phone Number" required class="border p-2 rounded w-full">
+                        <textarea name="Address" placeholder="Your Address" required class="border p-2 rounded w-full"></textarea>
+                        
+                        <div class="bg-gray-50 p-4 rounded">
+                            <label class="block text-sm font-bold mb-2">Preferred Contact Method:</label>
+                            <div class="flex gap-4">
+                                <label><input type="radio" name="Contact Method" value="Call" checked> Call</label>
+                                <label><input type="radio" name="Contact Method" value="Text"> Text</label>
+                                <label><input type="radio" name="Contact Method" value="Email"> Email</label>
                             </div>
                         </div>
 
-                        <!-- Project Details -->
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">What services do you need?</label>
-                            <div class="space-y-2">
-                                <label class="inline-flex items-center">
-                                    <input type="checkbox" name="Services Requested" value="Tape Digitization" class="rounded border-gray-300 text-teal-600 shadow-sm focus:border-teal-300 focus:ring focus:ring-teal-200 focus:ring-opacity-50">
-                                    <span class="ml-2 text-gray-700">Tape Digitization (VHS, Camcorder)</span>
-                                </label><br>
-                                <label class="inline-flex items-center">
-                                    <input type="checkbox" name="Services Requested" value="Tape Repair" class="rounded border-gray-300 text-teal-600 shadow-sm focus:border-teal-300 focus:ring focus:ring-teal-200 focus:ring-opacity-50">
-                                    <span class="ml-2 text-gray-700">Tape Repair / Mold Cleaning</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700">Estimated Quantity of Items</label>
-                            <input type="number" name="Total Items Estimated" id="modal-qty" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-teal-500 focus:border-teal-500" placeholder="e.g., 5">
-                        </div>
-
-                        <!-- Logistics -->
-                        <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                            <label class="block text-sm font-bold text-gray-900 mb-2">How will we receive your items?</label>
-                            <div class="mt-2 space-y-3">
-                                <label class="flex items-center">
-                                    <input type="radio" name="Delivery Method" value="Dropoff" class="text-teal-600 focus:ring-teal-500" checked onchange="togglePickupDate(false)">
-                                    <span class="ml-2 text-gray-700">I will drop them off (Free)</span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="radio" name="Delivery Method" value="Pickup" class="text-teal-600 focus:ring-teal-500" onchange="togglePickupDate(true)">
-                                    <span class="ml-2 text-gray-700">Local Pickup Service (+$20)</span>
-                                </label>
-                            </div>
-                            
-                            <div id="pickup-scheduling" class="mt-4 hidden pl-6 border-l-2 border-teal-500">
-                                <label class="block text-sm font-medium text-gray-700 mb-1">Preferred Pickup Date & Time</label>
-                                <input type="datetime-local" name="Requested Pickup Time" class="block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-teal-500 focus:border-teal-500">
-                                <p class="text-xs text-gray-500 mt-1">We will contact you to confirm this time.</p>
-                            </div>
-                        </div>
-
-                        <!-- Legal Agreement Section -->
-                        <div class="bg-red-50 p-4 rounded-lg border border-red-100">
-                            <h4 class="text-sm font-bold text-red-800 mb-2"><i class="fas fa-exclamation-triangle mr-2"></i>Service & Liability Agreement</h4>
-                            <div class="text-xs text-gray-700 space-y-2 h-32 overflow-y-auto bg-white p-3 border border-gray-200 rounded mb-3">
-                                <p><strong>1. Media Degradation:</strong> Client acknowledges that magnetic tape (VHS, Hi8, etc.) degrades over time. ReviveMedia & Recovery is not responsible for audio/video loss inherent to the physical condition of the provided media.</p>
-                                <p><strong>2. Repair Limitations:</strong> Tape repair and mold cleaning are attempted on a best-effort basis. Success is not guaranteed, and repair fees apply regardless of the final digitization quality.</p>
-                                <p><strong>3. Liability Limit:</strong> In the rare event of damage or loss caused while media is in our possession, liability is strictly limited to the replacement cost of blank media of an equivalent type and length. We hold no liability for the sentimental or intrinsic value of the content.</p>
-                                <p><strong>4. Copyright:</strong> Client certifies they own the copyright or have permission to duplicate the provided materials.</p>
-                            </div>
-                            <label class="flex items-start">
-                                <input type="checkbox" name="Agreed To Terms" value="Yes" id="legal-checkbox" required class="mt-1 rounded border-gray-300 text-teal-600 shadow-sm focus:border-teal-300 focus:ring focus:ring-teal-200 focus:ring-opacity-50">
-                                <span class="ml-2 text-sm text-gray-700 font-medium">I have read and agree to the Service & Liability Agreement.</span>
-                            </label>
-                            <div class="mt-3">
-                                <label class="block text-xs font-medium text-gray-700">Digital Signature (Type your full name)</label>
-                                <input type="text" name="Digital Signature" id="legal-signature" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-1.5 px-3 text-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500" placeholder="John Doe">
-                            </div>
+                        <div class="bg-red-50 p-4 rounded text-xs">
+                            <p class="font-bold text-red-800 mb-1">Liability Agreement</p>
+                            <label><input type="checkbox" id="legal-checkbox" required> I read and agree to the Service & Liability Agreement.</label>
+                            <input type="text" name="Digital Signature" placeholder="Type Full Name to Sign" required class="border p-2 rounded w-full mt-2">
                         </div>
                         
-                        <!-- Submit Buttons -->
-                        <div class="bg-gray-50 py-3 sm:flex sm:flex-row-reverse border-t mt-6 -mx-4 -mb-4 px-4 sm:px-6">
-                            <button type="submit" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-teal-600 text-base font-medium text-white hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 sm:ml-3 sm:w-auto sm:text-sm">
-                                Submit Request
-                            </button>
-                            <button type="button" onclick="closeModal()" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
-                                Cancel
-                            </button>
-                        </div>
+                        <button type="submit" class="w-full bg-teal-600 text-white py-3 rounded font-bold">Submit Request</button>
                     </form>
                 </div>
             </div>
@@ -384,74 +242,37 @@
     </div>
 
     <script>
-        // Modal functions
-        function openModal() {
-            document.getElementById('intakeModal').classList.remove('hidden');
-        }
-
-        function closeModal() {
-            document.getElementById('intakeModal').classList.add('hidden');
-        }
-
-        function togglePickupDate(show) {
-            const dateDiv = document.getElementById('pickup-scheduling');
-            if(show) {
-                dateDiv.classList.remove('hidden');
-            } else {
-                dateDiv.classList.add('hidden');
-            }
-        }
-
-        function validateForm(event) {
-            const checkbox = document.getElementById('legal-checkbox');
-            const signature = document.getElementById('legal-signature');
-            
-            if(!checkbox.checked || signature.value.trim() === '') {
-                alert('Please check the agreement box and provide your digital signature to proceed.');
-                event.preventDefault(); 
-                return false;
-            }
-            return true;
-        }
-
-        // CORRECTED Price Quoter Logic based on Tiers
+        function openModal() { document.getElementById('intakeModal').classList.remove('hidden'); }
+        function closeModal() { document.getElementById('intakeModal').classList.add('hidden'); }
+        
         function calculateTotal() {
             const tapes = parseInt(document.getElementById('calc-tapes').value) || 0;
-            
-            // Determine per-tape rate based on tier
-            let tapeRate = 0;
-            if (tapes >= 20) {
-                tapeRate = 15;
-            } else if (tapes >= 10) {
-                tapeRate = 18;
-            } else if (tapes > 0) {
-                tapeRate = 20;
-            }
-
             const repairs = parseInt(document.getElementById('calc-repairs').value) || 0;
-            const storageCost = parseInt(document.getElementById('calc-storage').value) || 0;
-            const pickupCost = document.getElementById('calc-pickup').checked ? 20 : 0;
+            const storage = parseInt(document.getElementById('calc-storage').value) || 0;
+            const pickup = document.getElementById('calc-pickup').checked ? 20 : 0;
 
-            const total = (tapes * tapeRate) + (repairs * 20) + storageCost + pickupCost;
+            let rate = 0;
+            if (tapes >= 20) rate = 15;
+            else if (tapes >= 10) rate = 18;
+            else rate = 20;
 
+            const total = (tapes * rate) + (repairs * 20) + storage + pickup;
             document.getElementById('calc-total-display').innerText = '$' + total;
         }
 
         function transferQuoteToModal() {
-            const tapes = parseInt(document.getElementById('calc-tapes').value) || 0;
-            if (tapes > 0) {
-                document.getElementById('modal-qty').value = tapes;
-            }
-            if (document.getElementById('calc-pickup').checked) {
-                const radios = document.getElementsByName('Delivery Method');
-                for (let radio of radios) {
-                    if (radio.value === 'Pickup') {
-                        radio.checked = true;
-                        togglePickupDate(true);
-                    }
-                }
-            }
+            const tapes = document.getElementById('calc-tapes').value;
+            if (tapes > 0) document.getElementById('modal-qty').value = tapes;
             openModal();
+        }
+
+        function validateForm(event) {
+            if(!document.getElementById('legal-checkbox').checked) {
+                alert('Please agree to the terms.');
+                event.preventDefault();
+                return false;
+            }
+            return true;
         }
     </script>
 </body>

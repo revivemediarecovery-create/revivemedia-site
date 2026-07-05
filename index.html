@@ -4,685 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ReviveMedia & Recovery | VHS to Digital & Data Rescue</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        heading: ['Poppins', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            50: '#f0f9fa',
-                            100: '#d9f0f4',
-                            500: '#2a7f8e', // Logo Cyan
-                            600: '#1d6270',
-                            900: '#0e3a43', // Dark Cyan
-                        },
-                        accent: {
-                            500: '#c5a059', // Logo Gold
-                            600: '#a38242',
-                        }
-                    }
+                    colors: { brand: { 500: '#2a7f8e', 900: '#0e3a43' }, accent: { 500: '#c5a059' } }
                 }
             }
         }
     </script>
-    <style>
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(229, 231, 235, 0.5);
-        }
-        .hero-pattern {
-            background-color: #0f172a;
-            background-image: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
-        }
-        .gradient-text {
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-image: linear-gradient(to right, #2a7f8e, #c5a059);
-        }
-    </style>
-    <script>
-        // Fallback for preview environments so broken images don't display
-        function handleLogoError(img) {
-            img.onerror = null;
-            img.outerHTML = `<div class="bg-brand-500 text-white font-heading font-bold text-xl px-4 py-2 rounded-lg tracking-wider flex items-center justify-center shadow-md border border-brand-600"><span>Revive</span><span class="text-accent-500 ml-1">Media</span></div>`;
-        }
-    </script>
 </head>
-<body class="font-sans text-slate-800 antialiased bg-slate-50">
+<body class="bg-slate-50 text-slate-800">
 
-    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
-                <div class="flex-shrink-0 flex items-center cursor-pointer bg-white rounded-xl p-1 shadow-sm border border-slate-100" onclick="window.scrollTo(0,0)">
-                    <img src="Image_c1739ec173.jpg" onerror="handleLogoError(this)" alt="ReviveMedia & Recovery Logo" class="h-16 w-auto transition-transform hover:scale-105 rounded object-contain">
-                </div>
-                
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#services" class="text-slate-600 hover:text-brand-600 font-medium transition">Services</a>
-                    <a href="#pricing" class="text-slate-600 hover:text-brand-600 font-medium transition">Pricing</a>
-                    <a href="#youtube-feature" class="text-slate-600 hover:text-brand-600 font-medium transition">Instant View</a>
-                    <a href="#estimator" class="text-slate-600 hover:text-brand-600 font-medium transition">Quote Estimator</a>
-                    <button onclick="openModal()" class="bg-slate-900 hover:bg-slate-800 text-white px-6 py-2.5 rounded-full font-medium transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
-                        Start a Project
-                    </button>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-slate-900 focus:outline-none p-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
-                        <i class="fa-solid fa-bars text-2xl"></i>
-                    </button>
-                </div>
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm h-20 flex items-center border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 w-full flex justify-between items-center">
+            <div class="flex items-center">
+                <!-- Using onerror to show placeholder in preview, real logo in production -->
+                <img src="Image_c1739ec173.jpg" alt="ReviveMedia Logo" class="h-16 w-auto" 
+                     onerror="this.src='https://placehold.co/150x150/0e3a43/c5a059?text=Logo'; this.classList.add('p-2', 'bg-slate-900', 'rounded-lg')">
             </div>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full shadow-lg">
-            <div class="px-4 pt-2 pb-6 space-y-1 flex flex-col">
-                <a href="#services" class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50 rounded-md">Services</a>
-                <a href="#pricing" class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50 rounded-md">Pricing</a>
-                <a href="#youtube-feature" class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50 rounded-md">Instant View</a>
-                <a href="#estimator" class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50 rounded-md">Quote Estimator</a>
-                <button onclick="openModal()" class="mt-4 w-full bg-slate-900 text-white px-6 py-3 rounded-md font-medium text-center">Start a Project</button>
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="#services" class="hover:text-brand-500 transition">Services</a>
+                <a href="#pricing" class="hover:text-brand-500 transition">Pricing</a>
+                <button onclick="document.getElementById('contactModal').classList.remove('hidden')" class="bg-slate-900 text-white px-6 py-2 rounded-full hover:bg-slate-800">Start Project</button>
             </div>
         </div>
     </nav>
 
-    <section class="hero-pattern pt-32 pb-20 md:pt-48 md:pb-32 px-4 relative overflow-hidden" id="services">
-        <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-            <div class="absolute -top-[20%] -right-[10%] w-[50%] h-[50%] rounded-full bg-brand-500/10 blur-3xl"></div>
-            <div class="absolute top-[60%] -left-[10%] w-[40%] h-[40%] rounded-full bg-blue-500/10 blur-3xl"></div>
-        </div>
+    <section class="pt-32 pb-20 text-center bg-slate-900 text-white">
+        <h1 class="text-5xl font-bold mb-6">Your Memories, <span class="text-teal-500">Rescued.</span></h1>
+        <p class="text-xl text-slate-300 mb-10">Professional VHS to Digital & Data Recovery.</p>
+    </section>
 
-        <div class="max-w-7xl mx-auto relative z-10 text-center">
-            <div class="inline-block mb-4 px-4 py-1.5 rounded-full bg-brand-500/20 border border-brand-500/30 text-brand-100 text-sm font-semibold tracking-wide backdrop-blur-sm">
-                VHS to Digital &bull; Professional Data Recovery
+    <section id="youtube-feature" class="py-20">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-8">See Our Quality: 1997 Demo</h2>
+            <div class="w-full aspect-video bg-black rounded-xl overflow-hidden shadow-2xl relative">
+                <!-- YouTube Demo -->
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/Olpch-iWdzo?autoplay=1&mute=1&loop=1&playlist=Olpch-iWdzo&start=10&end=40&controls=0" allowfullscreen></iframe>
             </div>
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6 leading-tight">
-                Your Memories & Data, <br />
-                <span class="gradient-text">Rescued & Ready.</span>
-            </h1>
-            <p class="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-                We digitize your precious family tapes to modern formats and recover lost files from failing drives. Experience our exclusive <strong>Instant View</strong> YouTube service.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
-                <button onclick="openModal('media')" class="bg-brand-500 hover:bg-brand-400 text-slate-900 px-8 py-4 rounded-full font-bold text-lg transition shadow-[0_0_20px_rgba(20,184,166,0.4)] hover:shadow-[0_0_25px_rgba(20,184,166,0.6)] transform hover:-translate-y-1 flex items-center">
-                    <i class="fa-solid fa-film mr-2"></i> Convert Media
-                </button>
-                <button onclick="openModal('data')" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-full font-bold text-lg transition backdrop-blur-md transform hover:-translate-y-1 flex items-center">
-                    <i class="fa-solid fa-hard-drive mr-2"></i> Recover Data
-                </button>
+            <a href="https://www.youtube.com/@thefamilytimemachine" target="_blank" class="inline-block mt-8 bg-red-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-red-700 transition">
+                Visit Our YouTube Channel
+            </a>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-20 bg-slate-100">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Quote Estimator</h2>
+            <div class="bg-white p-8 rounded-2xl shadow-lg">
+                <label class="block mb-4">
+                    Number of Tapes:
+                    <input type="number" id="tapes" value="0" class="border p-2 w-full rounded" oninput="calculateEstimate()">
+                </label>
+                <div id="result" class="text-2xl font-bold text-teal-700">Total Estimate: $0</div>
             </div>
         </div>
     </section>
 
-    <section id="youtube-feature" class="py-20 bg-white relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-slate-900 rounded-3xl overflow-hidden shadow-2xl flex flex-col lg:flex-row">
-                <div class="lg:w-1/2 p-10 lg:p-16 flex flex-col justify-center">
-                    <div class="w-14 h-14 bg-red-600 rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg shadow-red-600/30">
-                        <i class="fa-brands fa-youtube text-3xl"></i>
-                    </div>
-                    <h2 class="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-                        The Instant View Experience
-                    </h2>
-                    <p class="text-slate-300 text-lg mb-6 leading-relaxed">
-                        Don't wait for the mail. The moment your VHS or DVD conversion is complete, we upload it to a private, unlisted YouTube channel created just for you.
-                    </p>
-                    <ul class="space-y-4 text-slate-300">
-                        <li class="flex items-start">
-                            <i class="fa-solid fa-circle-check text-brand-500 mt-1 mr-3"></i>
-                            <span><strong>Watch Anywhere:</strong> View on your Smart TV, phone, or tablet immediately.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fa-solid fa-circle-check text-brand-500 mt-1 mr-3"></i>
-                            <span><strong>Easy Sharing:</strong> Just send the private link to family members across the globe.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fa-solid fa-circle-check text-brand-500 mt-1 mr-3"></i>
-                            <span><strong>Total Privacy:</strong> Videos are unlisted and completely secure.</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="lg:w-1/2 bg-slate-800 p-8 lg:p-12 flex flex-col items-center justify-center">
-                    <p class="text-white text-sm font-semibold mb-3 tracking-wide text-center"><i class="fa-solid fa-play-circle text-brand-500 mr-2"></i> Demo: 1997 Easter Farm Video</p>
-                    <div class="w-full aspect-video rounded-xl overflow-hidden shadow-2xl border-4 border-slate-700 relative group cursor-pointer bg-slate-800" id="videoContainer" style="background-image: url('https://img.youtube.com/vi/Olpch-iWdzo/hqdefault.jpg'); background-size: cover; background-position: center;">
-                        <!-- We use an iframe directly for the 1997 demo, configured to auto-play a short muted looping clip -->
-                        <iframe class="w-full h-full relative z-10" src="https://www.youtube.com/embed/Olpch-iWdzo?autoplay=1&mute=1&loop=1&playlist=Olpch-iWdzo&start=10&end=40&controls=0&rel=0&modestbranding=1" title="1997 Demo Video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    
-                    <div class="mt-8 text-center">
-                        <p class="text-slate-400 text-xs mb-2 uppercase tracking-wider font-bold">Check out our official channel</p>
-                        <a href="https://www.youtube.com/@thefamilytimemachine" target="_blank" class="inline-flex items-center gap-3 px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-xl font-bold transition transform hover:-translate-y-0.5 shadow-lg shadow-red-600/30">
-                            <i class="fa-brands fa-youtube text-xl"></i> @thefamilytimemachine
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="pricing" class="py-20 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-4">Simple, Transparent Pricing</h2>
-                <p class="text-slate-600">Review our straightforward pricing matrices below. Use the interactive calculator further down to estimate your project total!</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Media Digitization Card -->
-                <div class="bg-white p-8 rounded-3xl shadow-lg flex flex-col justify-between">
-                    <div>
-                        <h3 class="text-xl font-bold mb-6 text-brand-600 border-b pb-4 flex items-center justify-between">
-                            <span>Media Digitization & Storage</span>
-                            <i class="fa-solid fa-film text-slate-400"></i>
-                        </h3>
-                        <ul class="space-y-3 text-slate-700 text-sm mb-6">
-                            <li class="flex justify-between border-b border-slate-50 pb-2">
-                                <span>VHS/Camcorder (1-9 tapes)</span> <span class="font-bold text-slate-900">$20.00 / tape</span>
-                            </li>
-                            <li class="flex justify-between border-b border-slate-50 pb-2">
-                                <span>VHS/Camcorder (10-19 tapes)</span> <span class="font-bold text-slate-900">$18.00 / tape</span>
-                            </li>
-                            <li class="flex justify-between border-b border-slate-50 pb-2">
-                                <span>VHS/Camcorder (20+ Bulk Rate)</span> <span class="font-bold text-slate-900">$15.00 / tape</span>
-                            </li>
-                            <li class="flex justify-between border-b border-slate-50 pb-2">
-                                <span>DVD / MiniDVD to digital</span> <span class="font-bold text-slate-900">$12.00 / disc</span>
-                            </li>
-                            <li class="flex justify-between border-b border-slate-50 pb-2">
-                                <span>16GB USB 3.0 Flash Drive</span> <span class="font-bold text-slate-900">$15.00</span>
-                            </li>
-                            <li class="flex justify-between border-b border-slate-50 pb-2">
-                                <span>32GB USB 3.0 Flash Drive</span> <span class="font-bold text-slate-900">$25.00</span>
-                            </li>
-                            <li class="flex justify-between pb-2">
-                                <span>64GB USB 3.0 Flash Drive</span> <span class="font-bold text-slate-900">$35.00</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <p class="text-xs text-slate-500 italic mt-2">
-                        *Blank tapes or tapes with only TV recordings are not charged if discovered during processing.
-                    </p>
-                </div>
-
-                <!-- Repairs & Data Recovery Card -->
-                <div class="bg-white p-8 rounded-3xl shadow-lg flex flex-col justify-between">
-                    <div>
-                        <h3 class="text-xl font-bold mb-6 text-brand-600 border-b pb-4 flex items-center justify-between">
-                            <span>Repair & Data Recovery</span>
-                            <i class="fa-solid fa-screwdriver-wrench text-slate-400"></i>
-                        </h3>
-                        <ul class="space-y-3 text-slate-700 text-sm mb-6">
-                            <li class="flex justify-between border-b border-slate-50 pb-2">
-                                <span>Basic Tape Repair/Splicing</span> <span class="font-bold text-slate-900">$15.00 / tape</span>
-                            </li>
-                            <li class="flex justify-between border-b border-slate-50 pb-2">
-                                <span>Mold / Mildew Deep Clean</span> <span class="font-bold text-slate-900">$25.00 / tape</span>
-                            </li>
-                            <li class="flex justify-between border-b border-slate-50 pb-2">
-                                <span>Recovery Diagnostic Fee</span> <span class="font-bold text-slate-900">$35.00</span>
-                            </li>
-                            <li class="flex justify-between border-b border-slate-50 pb-2">
-                                <span>Tier 1: Basic Logical (USB/SD)</span> <span class="font-bold text-slate-900">$99 - $149</span>
-                            </li>
-                            <li class="flex justify-between border-b border-slate-50 pb-2">
-                                <span>Tier 2: Advanced (HDD/SSD)</span> <span class="font-bold text-slate-900">$199 - $299</span>
-                            </li>
-                            <li class="flex justify-between pb-2">
-                                <span>Premium Supply: 1TB SSD</span> <span class="font-bold text-slate-900">$189.00</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <p class="text-xs text-slate-500 italic mb-1">*Tape repair is best-effort and not guaranteed.</p>
-                        <p class="text-xs font-bold text-brand-900">🛡️ No Data, No Fee on logical recoveries!</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Courier Pickup Section Info -->
-            <div class="mt-12 bg-white p-8 rounded-3xl shadow-lg border border-brand-100">
-                <h4 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
-                    <i class="fa-solid fa-car text-brand-600"></i> 🏠 Local Pickup Service
-                </h4>
-                <p class="text-slate-600 text-sm leading-relaxed">
-                    Can't make it to us? We offer a local courier pickup and return service in the Pleasant Hill and Des Moines area for a <strong>flat-rate of $25.00</strong> to simplify logistics and keep your materials secure.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section id="estimator" class="py-20 bg-white border-t border-slate-200/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-accent-600 font-bold tracking-widest text-sm uppercase">Cost Calculator</span>
-                <h2 class="text-3xl md:text-4xl font-heading font-bold text-slate-900 mt-2">Interactive Project Estimator</h2>
-                <p class="text-slate-500 mt-4">Select items to generate a dynamic project cost projection. You can directly send your calculated estimate to pre-fill the inquiry form below!</p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                <!-- Inputs Side -->
-                <div class="lg:col-span-7 bg-slate-50 p-8 rounded-3xl border border-slate-100 shadow-sm space-y-6">
-                    <!-- Conversion Media -->
-                    <div>
-                        <h3 class="text-md font-bold text-slate-900 mb-4 flex items-center gap-2">
-                            <i class="fa-solid fa-photo-film text-brand-600"></i> 1. Conversion Services
-                        </h3>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs font-semibold text-slate-500 uppercase mb-2">Video Tapes (VHS, Hi8, etc)</label>
-                                <div class="flex items-center">
-                                    <button onclick="adjustQty('tapes', -1)" class="px-4 py-2 bg-slate-200 hover:bg-slate-300 rounded-l-lg transition font-bold text-lg select-none">-</button>
-                                    <input type="number" id="est-tapes" value="0" min="0" onchange="performCalculation()" class="w-full text-center border-y border-slate-200 py-2 focus:outline-none focus:ring-0 font-medium bg-white">
-                                    <button onclick="adjustQty('tapes', 1)" class="px-4 py-2 bg-slate-200 hover:bg-slate-300 rounded-r-lg transition font-bold text-lg select-none">+</button>
-                                </div>
-                                <span class="text-[10px] text-slate-400 mt-1 block italic">Tiers: 1-9 ($20), 10-19 ($18), 20+ ($15)</span>
-                            </div>
-
-                            <div>
-                                <label class="block text-xs font-semibold text-slate-500 uppercase mb-2">DVD & MiniDVD discs</label>
-                                <div class="flex items-center">
-                                    <button onclick="adjustQty('dvds', -1)" class="px-4 py-2 bg-slate-200 hover:bg-slate-300 rounded-l-lg transition font-bold text-lg select-none">-</button>
-                                    <input type="number" id="est-dvds" value="0" min="0" onchange="performCalculation()" class="w-full text-center border-y border-slate-200 py-2 focus:outline-none focus:ring-0 font-medium bg-white">
-                                    <button onclick="adjustQty('dvds', 1)" class="px-4 py-2 bg-slate-200 hover:bg-slate-300 rounded-r-lg transition font-bold text-lg select-none">+</button>
-                                </div>
-                                <span class="text-[10px] text-slate-400 mt-1 block italic">$12 per disc flat rate</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Repairs -->
-                    <div class="border-t border-slate-200/80 pt-6">
-                        <h3 class="text-md font-bold text-slate-900 mb-4 flex items-center gap-2">
-                            <i class="fa-solid fa-bandage text-brand-600"></i> 2. Tape Repairs (If Damaged)
-                        </h3>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs font-semibold text-slate-500 uppercase mb-2">Basic Repair / Splicing</label>
-                                <div class="flex items-center">
-                                    <button onclick="adjustQty('splicing', -1)" class="px-4 py-2 bg-slate-200 hover:bg-slate-300 rounded-l-lg transition font-bold text-lg select-none">-</button>
-                                    <input type="number" id="est-splicing" value="0" min="0" onchange="performCalculation()" class="w-full text-center border-y border-slate-200 py-2 focus:outline-none focus:ring-0 font-medium bg-white">
-                                    <button onclick="adjustQty('splicing', 1)" class="px-4 py-2 bg-slate-200 hover:bg-slate-300 rounded-r-lg transition font-bold text-lg select-none">+</button>
-                                </div>
-                            </div>
-                            <div>
-                                <label class="block text-xs font-semibold text-slate-500 uppercase mb-2">Mold & Mildew Cleaning</label>
-                                <div class="flex items-center">
-                                    <button onclick="adjustQty('mold', -1)" class="px-4 py-2 bg-slate-200 hover:bg-slate-300 rounded-l-lg transition font-bold text-lg select-none">-</button>
-                                    <input type="number" id="est-mold" value="0" min="0" onchange="performCalculation()" class="w-full text-center border-y border-slate-200 py-2 focus:outline-none focus:ring-0 font-medium bg-white">
-                                    <button onclick="adjustQty('mold', 1)" class="px-4 py-2 bg-slate-200 hover:bg-slate-300 rounded-r-lg transition font-bold text-lg select-none">+</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Flash Storage -->
-                    <div class="border-t border-slate-200/80 pt-6">
-                        <h3 class="text-md font-bold text-slate-900 mb-4 flex items-center gap-2">
-                            <i class="fa-solid fa-usb text-brand-600"></i> 3. Storage Media
-                        </h3>
-                        <div class="grid grid-cols-1 md:grid-cols-4 gap-2">
-                            <label class="flex items-center justify-between p-3 bg-white rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-100 transition">
-                                <span class="flex items-center gap-2 text-xs font-semibold text-slate-700">
-                                    <input type="radio" name="est-drive" value="0" checked onchange="performCalculation()" class="text-brand-600"> Own Drive
-                                </span>
-                            </label>
-                            <label class="flex items-center justify-between p-3 bg-white rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-100 transition">
-                                <span class="flex items-center gap-2 text-xs font-semibold text-slate-700">
-                                    <input type="radio" name="est-drive" value="15" onchange="performCalculation()" class="text-brand-600"> 16GB
-                                </span>
-                                <span class="text-xs font-bold text-slate-600">$15</span>
-                            </label>
-                            <label class="flex items-center justify-between p-3 bg-white rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-100 transition">
-                                <span class="flex items-center gap-2 text-xs font-semibold text-slate-700">
-                                    <input type="radio" name="est-drive" value="25" onchange="performCalculation()" class="text-brand-600"> 32GB
-                                </span>
-                                <span class="text-xs font-bold text-slate-600">$25</span>
-                            </label>
-                            <label class="flex items-center justify-between p-3 bg-white rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-100 transition">
-                                <span class="flex items-center gap-2 text-xs font-semibold text-slate-700">
-                                    <input type="radio" name="est-drive" value="35" onchange="performCalculation()" class="text-brand-600"> 64GB
-                                </span>
-                                <span class="text-xs font-bold text-slate-600">$35</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Logical Recovery -->
-                    <div class="border-t border-slate-200/80 pt-6">
-                        <h3 class="text-md font-bold text-slate-900 mb-4 flex items-center gap-2">
-                            <i class="fa-solid fa-network-wired text-brand-600"></i> 4. Data Recovery Services
-                        </h3>
-                        <div class="space-y-2">
-                            <label class="flex items-start gap-3 p-3.5 bg-white rounded-2xl border border-slate-200 cursor-pointer hover:bg-slate-100 transition">
-                                <input type="checkbox" id="rec-bench" onchange="performCalculation()" class="mt-0.5 text-brand-600">
-                                <div>
-                                    <span class="text-sm font-bold text-slate-900 block">Initial Diagnostic & Bench Fee ($35)</span>
-                                </div>
-                            </label>
-                            <label class="flex items-start gap-3 p-3.5 bg-white rounded-2xl border border-slate-200 cursor-pointer hover:bg-slate-100 transition">
-                                <input type="checkbox" id="rec-tier1" onchange="performCalculation()" class="mt-0.5 text-brand-600">
-                                <div>
-                                    <span class="text-sm font-bold text-slate-900 block">Tier 1: Logical Recovery ($99 baseline)</span>
-                                </div>
-                            </label>
-                            <label class="flex items-start gap-3 p-3.5 bg-white rounded-2xl border border-slate-200 cursor-pointer hover:bg-slate-100 transition">
-                                <input type="checkbox" id="rec-tier2" onchange="performCalculation()" class="mt-0.5 text-brand-600">
-                                <div>
-                                    <span class="text-sm font-bold text-slate-900 block">Tier 2: Advanced Logical ($199 baseline)</span>
-                                </div>
-                            </label>
-                            <label class="flex items-start gap-3 p-3.5 bg-white rounded-2xl border border-slate-200 cursor-pointer hover:bg-slate-100 transition">
-                                <input type="checkbox" id="rec-ssd1tb" onchange="performCalculation()" class="mt-0.5 text-brand-600">
-                                <div>
-                                    <span class="text-sm font-bold text-slate-900 block">Supply 1TB External SSD hardware ($189)</span>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Pickup -->
-                    <div class="border-t border-slate-200/80 pt-6">
-                        <label class="flex items-start gap-3 p-4 bg-white rounded-2xl border border-slate-200 cursor-pointer hover:bg-slate-100 transition">
-                            <input type="checkbox" id="est-pickup" onchange="performCalculation()" class="mt-0.5 text-brand-600">
-                            <div>
-                                <span class="text-sm font-bold text-slate-900 block">Des Moines / Pleasant Hill Local Pickup ($25)</span>
-                            </div>
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Sticky Summary Side -->
-                <div class="lg:col-span-5 lg:sticky lg:top-28">
-                    <div class="bg-slate-900 text-white rounded-3xl p-8 shadow-xl relative overflow-hidden">
-                        <div class="absolute -right-16 -bottom-16 w-48 h-48 bg-white/5 rounded-full blur-2xl"></div>
-                        <h3 class="text-lg font-heading font-bold mb-6 border-b border-white/10 pb-4">Estimate Summary</h3>
-                        
-                        <div class="space-y-3.5 text-sm mb-6" id="estimate-list">
-                            <div class="flex justify-between text-slate-400">
-                                <span>No items selected yet.</span>
-                                <span>$0.00</span>
-                            </div>
-                        </div>
-
-                        <div class="border-t border-white/10 pt-6 flex justify-between items-baseline">
-                            <span class="font-heading font-bold">Estimated Total:</span>
-                            <span class="text-3xl font-heading font-bold text-brand-100" id="total-summary-display">$0.00</span>
-                        </div>
-
-                        <button onclick="exportSelectionToForm()" class="w-full mt-6 bg-accent-500 hover:bg-accent-600 text-slate-900 py-3.5 rounded-xl font-bold transition shadow-lg flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-paper-plane"></i> Sync Estimate to Project Form
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="reviews" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-4">Loved by Our Clients</h2>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100">
-                    <div class="flex text-accent-500 mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="text-slate-600 mb-6 italic">"Kory saved our family wedding tapes! The quality was amazing, and getting the private YouTube link to share was so easy."</p>
-                    <div class="font-bold text-slate-900">- Sarah J.</div>
-                </div>
-                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100">
-                    <div class="flex text-accent-500 mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="text-slate-600 mb-6 italic">"My external hard drive stopped working and I was panicked. ReviveMedia recovered 10 years of my photos. True to their word: no data, no fee!"</p>
-                    <div class="font-bold text-slate-900">- Mark D.</div>
-                </div>
-                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100">
-                    <div class="flex text-accent-500 mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="text-slate-600 mb-6 italic">"The local pickup service in Pleasant Hill was a lifesaver. Kory made the whole process completely stress-free."</p>
-                    <div class="font-bold text-slate-900">- Jessica R.</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-slate-950 pt-16 pb-8 text-slate-400">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
-                <div class="col-span-1 md:col-span-2">
-                    <div class="flex items-center mb-6">
-                        <div class="bg-white p-2 rounded-xl inline-block">
-                            <img src="Image_c1739ec173.jpg" onerror="handleLogoError(this)" alt="ReviveMedia Logo" class="h-24 w-auto object-contain rounded" />
-                        </div>
-                    </div>
-                    <p class="mb-6 max-w-sm">Saving the past and securing the future. Professional media digitization and logical data recovery services.</p>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Contact</h4>
-                    <ul class="space-y-3">
-                        <li class="flex items-start"><i class="fa-solid fa-user mt-1 mr-3 text-slate-500"></i> Kory Fuerstenberg</li>
-                        <li class="flex items-start"><i class="fa-solid fa-envelope mt-1 mr-3 text-slate-500"></i> <a href="mailto:revivemediarecovery@gmail.com" class="hover:text-brand-400 transition">revivemediarecovery@gmail.com</a></li>
-                        <li class="flex items-start"><i class="fa-solid fa-phone mt-1 mr-3 text-slate-500"></i> (515) 216-4020</li>
-                        <li class="flex items-start"><i class="fa-solid fa-location-dot mt-1 mr-3 text-slate-500"></i> 2255 SE 60th St.<br>Pleasant Hill, IA 50327</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-slate-800 pt-8 text-sm text-center">
-                <p>&copy; 2026 ReviveMedia & Recovery. All rights reserved.</p>
-            </div>
-        </div>
+    <footer class="bg-slate-950 py-10 text-center text-white">
+        <img src="Image_c1739ec173.jpg" alt="Logo" class="h-20 w-auto mx-auto mb-4" 
+             onerror="this.src='https://placehold.co/200x200/0e3a43/c5a059?text=ReviveMedia+Recovery'; this.classList.add('p-2', 'bg-white', 'rounded-lg')">
+        <p>&copy; 2026 ReviveMedia & Recovery.</p>
     </footer>
 
-    <div id="contactModal" class="fixed inset-0 z-[100] hidden overflow-y-auto p-4">
-        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
-        <div class="relative min-h-screen flex items-center justify-center">
-            <div class="bg-white rounded-2xl shadow-2xl w-full max-w-lg p-8 my-8 relative z-10">
-                <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 transition">
-                    <i class="fa-solid fa-xmark text-xl"></i>
-                </button>
-                <h3 class="text-xl font-bold mb-4">Start Your Project</h3>
-                <form id="intakeForm" class="space-y-4 text-left">
-                    <div>
-                        <label class="block text-sm font-medium text-slate-700">Service</label>
-                        <select id="serviceType" class="w-full border border-slate-300 p-2 rounded-lg">
-                            <option value="media">Media Digitization</option>
-                            <option value="data">Data Recovery</option>
-                            <option value="both">Both</option>
-                        </select>
-                    </div>
-                    <input type="text" placeholder="Name" class="w-full border border-slate-300 p-2 rounded-lg" required>
-                    <input type="email" placeholder="Email" class="w-full border border-slate-300 p-2 rounded-lg" required>
-                    
-                    <div class="flex items-center">
-                        <input id="pickupRequired" type="checkbox" class="mr-2" onchange="document.getElementById('pickupDetails').classList.toggle('hidden', !this.checked)">
-                        <label for="pickupRequired" class="text-sm">Request Local Pickup ($25)</label>
-                    </div>
-                    <input id="pickupDetails" type="text" placeholder="Preferred Date/Time for Pickup" class="w-full border border-slate-300 p-2 rounded-lg hidden">
-                    
-                    <textarea id="projectDetails" placeholder="Please describe your project (Number of tapes, type of media/device, etc.)" class="w-full border border-slate-300 p-2 rounded-lg h-32" required></textarea>
-                    
-                    <!-- Legal Section -->
-                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
-                        <h4 class="font-bold text-sm mb-2 text-slate-900">Service Agreement & Waiver</h4>
-                        <p class="text-xs text-slate-600 mb-3 italic">I understand that tape repair is a "best-effort" service and not guaranteed. For data recovery, I hold ReviveMedia harmless for any hardware failures during recovery attempts.</p>
-                        <div class="flex items-start">
-                            <input id="legalAgreement" type="checkbox" class="mr-2 mt-1" required>
-                            <label for="legalAgreement" class="text-xs text-slate-700">I acknowledge and agree to the terms above.</label>
-                        </div>
-                        <input type="text" placeholder="Type Full Name to Sign" class="w-full border border-slate-300 p-2 rounded-lg mt-3 text-sm" required>
-                    </div>
-
-                    <div id="formFeedback" class="hidden p-3.5 rounded-xl text-sm font-semibold border text-green-800 bg-green-50 border-green-200"></div>
-
-                    <button id="submitBtn" type="submit" class="w-full bg-brand-600 text-white py-3 rounded-lg font-bold hover:bg-brand-700 transition">Submit Request</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
     <script>
-        // Quantity adjustments helper for cost calculator
-        function adjustQty(elementId, delta) {
-            const input = document.getElementById('est-' + elementId);
-            let val = parseInt(input.value) || 0;
-            val = Math.max(0, val + delta);
-            input.value = val;
-            performCalculation();
-        }
-
-        // Calculation processing function
-        function performCalculation() {
-            const tapes = parseInt(document.getElementById('est-tapes').value) || 0;
-            const dvds = parseInt(document.getElementById('est-dvds').value) || 0;
-            const splices = parseInt(document.getElementById('est-splicing').value) || 0;
-            const mold = parseInt(document.getElementById('est-mold').value) || 0;
-            
-            const driveRadio = document.querySelector('input[name="est-drive"]:checked');
-            const driveCost = driveRadio ? parseInt(driveRadio.value) : 0;
-            
-            const bench = document.getElementById('rec-bench').checked ? 35 : 0;
-            const t1 = document.getElementById('rec-tier1').checked ? 99 : 0;
-            const t2 = document.getElementById('rec-tier2').checked ? 199 : 0;
-            const ssd = document.getElementById('rec-ssd1tb').checked ? 189 : 0;
-            const pickup = document.getElementById('est-pickup').checked ? 25 : 0;
-
-            let tapeRate = 20;
-            if (tapes >= 10 && tapes <= 19) tapeRate = 18;
-            else if (tapes >= 20) tapeRate = 15;
-
-            const tapesCost = tapes * tapeRate;
-            const dvdsCost = dvds * 12;
-            const splicesCost = splices * 15;
-            const moldCost = mold * 25;
-
-            const grandTotal = tapesCost + dvdsCost + splicesCost + moldCost + driveCost + bench + t1 + t2 + ssd + pickup;
-
-            const summaryList = document.getElementById('estimate-list');
-            summaryList.innerHTML = '';
-            let lineItemsCount = 0;
-
-            function renderLineItem(label, costValue) {
-                lineItemsCount++;
-                const item = document.createElement('div');
-                item.className = 'flex justify-between text-slate-300';
-                item.innerHTML = `<span>${label}</span> <span class="font-semibold text-white">$${costValue.toFixed(2)}</span>`;
-                summaryList.appendChild(item);
-            }
-
-            if (tapes > 0) renderLineItem(`${tapes}x Cassette Tapes ($${tapeRate}/ea)`, tapesCost);
-            if (dvds > 0) renderLineItem(`${dvds}x DVDs ($12/ea)`, dvdsCost);
-            if (splices > 0) renderLineItem(`${splices}x Physical Repair`, splicesCost);
-            if (mold > 0) renderLineItem(`${mold}x Mold Clean`, moldCost);
-            if (driveCost > 0) renderLineItem(`Flash Storage`, driveCost);
-            if (bench > 0) renderLineItem(`Diagnostic Bench Fee`, bench);
-            if (t1 > 0) renderLineItem(`Tier 1: Basic Recovery`, t1);
-            if (t2 > 0) renderLineItem(`Tier 2: Advanced Recovery`, t2);
-            if (ssd > 0) renderLineItem(`Supply 1TB HDD/SSD`, ssd);
-            if (pickup > 0) renderLineItem(`Local Courier Fee`, pickup);
-
-            if (lineItemsCount === 0) {
-                summaryList.innerHTML = '<div class="flex justify-between text-slate-400"><span>No items selected yet.</span><span>$0.00</span></div>';
-            }
-
-            document.getElementById('total-summary-display').textContent = `$${grandTotal.toFixed(2)}`;
-        }
-
-        // Export data directly to contact modal text box
-        function exportSelectionToForm() {
-            const tapes = parseInt(document.getElementById('est-tapes').value) || 0;
-            const dvds = parseInt(document.getElementById('est-dvds').value) || 0;
-            const splices = parseInt(document.getElementById('est-splicing').value) || 0;
-            const mold = parseInt(document.getElementById('est-mold').value) || 0;
-            
-            const driveRadio = document.querySelector('input[name="est-drive"]:checked');
-            const driveLabel = driveRadio && driveRadio.value !== "0" ? driveRadio.parentElement.textContent.trim() : "None";
-
-            const recBench = document.getElementById('rec-bench').checked;
-            const recT1 = document.getElementById('rec-tier1').checked;
-            const recT2 = document.getElementById('rec-tier2').checked;
-            const recSsd = document.getElementById('rec-ssd1tb').checked;
-            const localPickup = document.getElementById('est-pickup').checked;
-            const costText = document.getElementById('total-summary-display').textContent;
-
-            let formattedText = `--- Estimate Summary ---\n`;
-            if (tapes > 0) formattedText += `- Tapes: ${tapes}\n`;
-            if (dvds > 0) formattedText += `- DVDs: ${dvds}\n`;
-            if (splices > 0) formattedText += `- Splice/Repairs: ${splices}\n`;
-            if (mold > 0) formattedText += `- Mold cleans: ${mold}\n`;
-            if (driveLabel !== "None") formattedText += `- Storage: ${driveLabel}\n`;
-            
-            if (recBench) formattedText += `- Eval Fee ($35): Included\n`;
-            if (recT1) formattedText += `- Tier 1 Recovery: Included\n`;
-            if (recT2) formattedText += `- Tier 2 Recovery: Included\n`;
-            if (recSsd) formattedText += `- Premium 1TB SSD ($189): Included\n`;
-            if (localPickup) formattedText += `- Local Pickup ($25): Yes\n`;
-            formattedText += `Project Total: ${costText}\n------------------------\nMessage: `;
-
-            document.getElementById('projectDetails').value = formattedText;
-            
-            if (recT1 || recT2) {
-                document.getElementById('serviceType').value = (tapes > 0 || dvds > 0) ? 'both' : 'data';
-            } else {
-                document.getElementById('serviceType').value = 'media';
-            }
-
-            if (localPickup) {
-                document.getElementById('pickupRequired').checked = true;
-                document.getElementById('pickupDetails').classList.remove('hidden');
-            }
-
-            openModal();
-        }
-
-        const modal = document.getElementById('contactModal');
-        function openModal(t) { 
-            modal.classList.remove('hidden'); 
-            if(t) document.getElementById('serviceType').value = t;
-        }
-        function closeModal() { 
-            modal.classList.add('hidden');
-            document.getElementById('formFeedback').classList.add('hidden');
-            document.getElementById('submitBtn').classList.remove('hidden');
-        }
-        
-        document.getElementById('intakeForm').onsubmit = (e) => {
-            e.preventDefault();
-            const feedback = document.getElementById('formFeedback');
-            const submitBtn = document.getElementById('submitBtn');
-
-            feedback.textContent = "Thank you! Your request has been submitted. Kory will reach out shortly.";
-            feedback.classList.remove('hidden');
-            submitBtn.classList.add('hidden');
-
-            setTimeout(() => {
-                closeModal();
-                e.target.reset(); // reset form after close
-            }, 3000);
-        };
-
-        window.onscroll = () => {
-            document.getElementById('navbar').classList.toggle('shadow-md', window.scrollY > 10);
-        };
-
-        window.onload = function() {
-            performCalculation();
+        function calculateEstimate() {
+            const tapes = document.getElementById('tapes').value;
+            const price = tapes >= 20 ? 15 : tapes >= 10 ? 18 : 20;
+            document.getElementById('result').textContent = 'Total Estimate: $' + (tapes * price);
         }
     </script>
 </body>

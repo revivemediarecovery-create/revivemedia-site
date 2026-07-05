@@ -277,7 +277,16 @@
                         </button>
                     </div>
                     
-                    <form id="projectForm" class="space-y-6 max-h-[70vh] overflow-y-auto pr-2">
+                  <!-- WEB3FORMS SETUP IS HERE -->
+                    <form action="https://api.web3forms.com/submit" method="POST" onsubmit="return validateForm(event)" class="space-y-6 max-h-[70vh] overflow-y-auto pr-2">
+                        
+                        <!-- User's Access Key -->
+                        <input type="hidden" name="access_key" value="07216999-56c7-46f5-a328-9ea6eddbf597">
+                        
+                        <!-- Optional settings for the email -->
+                        <input type="hidden" name="subject" value="New Project Request from ReviveMedia Site!">
+                        <input type="hidden" name="redirect" value="https://web3forms.com/success">
+
                         <!-- Contact Info -->
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>

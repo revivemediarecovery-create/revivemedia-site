@@ -67,7 +67,9 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-gray-900 mb-4">See The Magic: A Real Family Memory Restored</h2>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">This is an actual digitization completed for <em>The Family Time Machine</em>. Watch how we bring 1997 back to crystal-clear life on modern devices!</p>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-6">
+                    This is an actual digitization completed for <em>The Family Time Machine</em>. With our <strong>exclusive "Instant View" service</strong>, your home movies are uploaded to a private, secure YouTube channel so you can easily watch and share your memories with anyone, anywhere in the world, on any device!
+                </p>
             </div>
             
             <div class="max-w-4xl mx-auto">
@@ -89,21 +91,13 @@
                 <div class="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow">
                     <div class="text-teal-600 text-4xl mb-4"><i class="fas fa-video"></i></div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-2">Tape Digitization</h3>
-                    <p class="text-gray-500 mb-6">Convert VHS, VHS-C, Hi8, and Camcorder tapes to modern digital formats (MP4, MOV, AVI, etc.)</p>
+                    <p class="text-gray-500 mb-6">Convert VHS, VHS-C, Hi8, and Camcorder tapes to modern digital formats.</p>
+                    <p class="text-sm font-bold text-teal-700 mb-4 underline"><i class="fas fa-youtube mr-1"></i> Includes "Instant View" YouTube Sharing</p>
                     
-                    <div class="bg-gray-50 rounded-lg p-4 mb-6 border border-gray-100">
-                        <div class="flex justify-between items-center mb-2 border-b border-gray-200 pb-2">
-                            <span class="text-gray-700">1 - 9 Tapes</span>
-                            <span class="font-bold text-gray-900">$20 <span class="text-sm font-normal text-gray-500">/ tape</span></span>
-                        </div>
-                        <div class="flex justify-between items-center mb-2 border-b border-gray-200 pb-2">
-                            <span class="text-gray-700">10 - 19 Tapes</span>
-                            <span class="font-bold text-gray-900">$18 <span class="text-sm font-normal text-gray-500">/ tape</span></span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-teal-700 font-bold">20+ Tapes (Bulk)</span>
-                            <span class="font-extrabold text-teal-700">$15 <span class="text-sm font-normal opacity-75">/ tape</span></span>
-                        </div>
+                    <div class="space-y-4">
+                        <div class="flex justify-between border-b pb-2"><span>1 - 9 Tapes</span><span class="font-bold">$20 ea</span></div>
+                        <div class="flex justify-between border-b pb-2"><span>10 - 19 Tapes</span><span class="font-bold">$18 ea</span></div>
+                        <div class="flex justify-between pb-2"><span>20+ (Bulk Rate)</span><span class="font-bold">$15 ea</span></div>
                     </div>
                 </div>
 
@@ -126,118 +120,78 @@
                     <p class="text-gray-500 mb-6">How would you like your files returned? Provide your own drive for free, or let us provide one.</p>
                     
                     <ul class="space-y-3 mb-6">
-                        <li class="flex items-center justify-between text-gray-800 font-bold bg-teal-50 p-2 rounded">
-                            <span>Customer Provided Drive</span>
-                            <span class="text-teal-600">FREE</span>
-                        </li>
-                        <li class="flex items-center justify-between text-gray-600">
-                            <span>16GB Flash Drive</span>
-                            <span class="font-bold">+$15</span>
-                        </li>
-                        <li class="flex items-center justify-between text-gray-600">
-                            <span>1TB Solid State Drive</span>
-                            <span class="font-bold">+$199</span>
-                        </li>
+                        <li class="flex items-center justify-between text-gray-800 font-bold bg-teal-50 p-2 rounded"><span>Customer Provided Drive</span><span class="text-teal-600">FREE</span></li>
+                        <li class="flex items-center justify-between text-gray-600"><span>16GB Flash Drive</span><span class="font-bold">+$15</span></li>
+                        <li class="flex items-center justify-between text-gray-600"><span>32GB Flash Drive</span><span class="font-bold">+$25</span></li>
+                        <li class="flex items-center justify-between text-gray-600"><span>64GB Flash Drive</span><span class="font-bold">+$35</span></li>
+                        <li class="flex items-center justify-between text-gray-600"><span>1TB SSD</span><span class="font-bold">+$199</span></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Interactive Price Quoter Section -->
-    <div id="quoter" class="py-20 bg-white border-t border-gray-100">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Price Quoter -->
+    <div id="quoter" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
             <div class="text-center mb-10">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Instant Price Estimator</h2>
-                <p class="text-lg text-gray-600">Adjust the options below to get an instant quote for your project.</p>
+                <h2 class="text-3xl font-bold text-gray-900">Instant Price Estimator</h2>
             </div>
-            
-            <div class="bg-gray-50 rounded-3xl shadow-xl p-8 border border-gray-200">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Inputs -->
-                    <div class="space-y-6">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Number of Tapes to Digitize</label>
-                            <input type="number" id="calc-tapes" min="0" value="0" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500" oninput="calculateTotal()">
-                        </div>
-
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Tapes Needing Repair ($20/ea)</label>
-                            <input type="number" id="calc-repairs" min="0" value="0" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500" oninput="calculateTotal()">
-                        </div>
-
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Storage Option</label>
-                            <select id="calc-storage" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500" onchange="calculateTotal()">
-                                <option value="0">I will provide my own USB/Drive ($0 - FREE)</option>
-                                <option value="15">ReviveMedia Provides: 16GB Flash Drive (+$15)</option>
-                                <option value="199">ReviveMedia Provides: 1TB Solid State Drive (+$199)</option>
-                            </select>
-                        </div>
-
-                        <div class="flex items-center p-4 bg-white border border-gray-200 rounded-lg">
-                            <input type="checkbox" id="calc-pickup" class="h-5 w-5 text-teal-600 border-gray-300 rounded focus:ring-teal-500" onchange="calculateTotal()">
-                            <label for="calc-pickup" class="ml-3 block text-sm font-medium text-gray-700">
-                                Include Local Item Pickup (+$20)
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Output Total -->
-                    <div class="bg-teal-700 text-white rounded-2xl p-8 flex flex-col justify-center items-center shadow-inner relative overflow-hidden">
-                        <div class="absolute top-0 right-0 -mr-8 -mt-8 w-32 h-32 rounded-full bg-teal-600 opacity-50"></div>
-                        
-                        <p class="text-teal-100 text-lg font-medium mb-2 relative z-10">Your Estimated Total</p>
-                        <h3 class="text-6xl font-extrabold mb-6 relative z-10" id="calc-total-display">$0</h3>
-                        
-                        <button onclick="transferQuoteToModal()" class="w-full bg-white text-teal-700 hover:bg-gray-100 px-6 py-3 rounded-lg font-bold transition-colors shadow relative z-10">
-                            Start This Project
-                        </button>
-                    </div>
+            <div class="bg-gray-50 rounded-3xl p-8 border border-gray-200 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="space-y-4">
+                    <label>Tapes ($20/$18/$15 tiers):</label>
+                    <input type="number" id="calc-tapes" min="0" value="0" class="w-full px-4 py-2 border rounded" oninput="calculateTotal()">
+                    <label>Repairs ($20/ea):</label>
+                    <input type="number" id="calc-repairs" min="0" value="0" class="w-full px-4 py-2 border rounded" oninput="calculateTotal()">
+                    <label>Storage Option:</label>
+                    <select id="calc-storage" class="w-full px-4 py-2 border rounded" onchange="calculateTotal()">
+                        <option value="0">Customer Drive (Free)</option>
+                        <option value="15">16GB (+$15)</option>
+                        <option value="25">32GB (+$25)</option>
+                        <option value="35">64GB (+$35)</option>
+                        <option value="199">1TB SSD (+$199)</option>
+                    </select>
+                </div>
+                <div class="bg-teal-700 text-white p-8 rounded-2xl flex flex-col justify-center items-center">
+                    <p>Your Estimated Total</p>
+                    <h3 class="text-5xl font-bold my-4" id="calc-total-display">$0</h3>
+                    <button onclick="transferQuoteToModal()" class="bg-white text-teal-700 px-6 py-2 rounded-full font-bold">Start This Project</button>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Intake Form Modal -->
-    <div id="intakeModal" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-            <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true" onclick="closeModal()"></div>
-            <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-2xl sm:w-full">
-                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Start Your Project</h3>
-                    <p class="text-sm text-gray-600 mb-6">Fill out the details below. I will reach out to you ASAP to discuss your project!</p>
-                    
-                    <form action="https://api.web3forms.com/submit" method="POST" onsubmit="return validateForm(event)" class="space-y-4 max-h-[60vh] overflow-y-auto pr-2">
-                        <input type="hidden" name="access_key" value="07216999-56c7-46f5-a328-9ea6eddbf597">
-                        
-                        <div class="grid grid-cols-2 gap-4">
-                            <input type="text" name="First Name" placeholder="First Name" required class="border p-2 rounded w-full">
-                            <input type="text" name="Last Name" placeholder="Last Name" required class="border p-2 rounded w-full">
-                        </div>
-                        <input type="email" name="Email" placeholder="Email Address" required class="border p-2 rounded w-full">
-                        <input type="tel" name="Phone" placeholder="Phone Number" required class="border p-2 rounded w-full">
-                        <textarea name="Address" placeholder="Your Address" required class="border p-2 rounded w-full"></textarea>
-                        
-                        <div class="bg-gray-50 p-4 rounded">
-                            <label class="block text-sm font-bold mb-2">Preferred Contact Method:</label>
-                            <div class="flex gap-4">
-                                <label><input type="radio" name="Contact Method" value="Call" checked> Call</label>
-                                <label><input type="radio" name="Contact Method" value="Text"> Text</label>
-                                <label><input type="radio" name="Contact Method" value="Email"> Email</label>
-                            </div>
-                        </div>
-
-                        <div class="bg-red-50 p-4 rounded text-xs">
-                            <p class="font-bold text-red-800 mb-1">Liability Agreement</p>
-                            <label><input type="checkbox" id="legal-checkbox" required> I read and agree to the Service & Liability Agreement.</label>
-                            <input type="text" name="Digital Signature" placeholder="Type Full Name to Sign" required class="border p-2 rounded w-full mt-2">
-                        </div>
-                        
-                        <button type="submit" class="w-full bg-teal-600 text-white py-3 rounded font-bold">Submit Request</button>
-                    </form>
+    <div id="intakeModal" class="fixed inset-0 z-[100] hidden bg-gray-500 bg-opacity-75 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg shadow-xl w-full max-w-lg p-6 max-h-[90vh] overflow-y-auto">
+            <h3 class="text-2xl font-bold mb-4">Start Your Project</h3>
+            <p class="text-sm text-gray-600 mb-4">Fill out the details below. We will reach out to you ASAP!</p>
+            
+            <form action="https://api.web3forms.com/submit" method="POST" onsubmit="return validateForm(event)" class="space-y-4">
+                <input type="hidden" name="access_key" value="07216999-56c7-46f5-a328-9ea6eddbf597">
+                
+                <input type="text" name="Name" placeholder="Full Name" required class="w-full border p-2 rounded">
+                <input type="email" name="Email" placeholder="Email Address" required class="w-full border p-2 rounded">
+                <input type="tel" name="Phone" placeholder="Phone Number" required class="w-full border p-2 rounded">
+                <textarea name="Address" placeholder="Your Address" required class="w-full border p-2 rounded"></textarea>
+                
+                <div class="bg-gray-50 p-3 rounded">
+                    <label class="block font-bold mb-2">Preferred Contact Method:</label>
+                    <div class="flex gap-4">
+                        <label><input type="radio" name="Contact Method" value="Call" checked> Call</label>
+                        <label><input type="radio" name="Contact Method" value="Text"> Text</label>
+                        <label><input type="radio" name="Contact Method" value="Email"> Email</label>
+                    </div>
                 </div>
-            </div>
+
+                <div class="text-xs bg-red-50 p-2 border border-red-200">
+                    <label><input type="checkbox" id="legal-checkbox" required> I agree to the service agreement.</label>
+                    <input type="text" name="Signature" placeholder="Type Full Name to Sign" required class="w-full border p-1 mt-1 rounded">
+                </div>
+                
+                <button type="submit" class="w-full bg-teal-600 text-white py-2 rounded font-bold">Submit Request</button>
+                <button type="button" onclick="closeModal()" class="w-full text-gray-500 mt-2">Cancel</button>
+            </form>
         </div>
     </div>
 
@@ -249,30 +203,27 @@
             const tapes = parseInt(document.getElementById('calc-tapes').value) || 0;
             const repairs = parseInt(document.getElementById('calc-repairs').value) || 0;
             const storage = parseInt(document.getElementById('calc-storage').value) || 0;
-            const pickup = document.getElementById('calc-pickup').checked ? 20 : 0;
+            const pickup = document.getElementById('calc-pickup') && document.getElementById('calc-pickup').checked ? 20 : 0;
 
-            let rate = 0;
+            let rate = 20;
             if (tapes >= 20) rate = 15;
             else if (tapes >= 10) rate = 18;
-            else rate = 20;
 
             const total = (tapes * rate) + (repairs * 20) + storage + pickup;
             document.getElementById('calc-total-display').innerText = '$' + total;
         }
 
-        function transferQuoteToModal() {
-            const tapes = document.getElementById('calc-tapes').value;
-            if (tapes > 0) document.getElementById('modal-qty').value = tapes;
-            openModal();
-        }
-
         function validateForm(event) {
             if(!document.getElementById('legal-checkbox').checked) {
-                alert('Please agree to the terms.');
+                alert('Please agree to terms.');
                 event.preventDefault();
                 return false;
             }
             return true;
+        }
+
+        function transferQuoteToModal() {
+            openModal();
         }
     </script>
 </body>

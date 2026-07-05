@@ -1,313 +1,428 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReviveMedia & Recovery | VHS to Digital & Data Rescue</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Tailwind CSS -->
+    <title>ReviveMedia & Recovery | Preserve. Restore. Connect.</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        heading: ['Poppins', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            50: '#f0f9fa',
-                            100: '#d9f0f4',
-                            500: '#2a7f8e', // Logo Cyan
-                            600: '#1d6270',
-                            900: '#0e3a43', // Dark Cyan
-                        },
-                        accent: {
-                            500: '#c5a059', // Logo Gold
-                            600: '#a38242',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         .glass-nav {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
-        .hero-pattern {
-            background-color: #0f172a;
-            background-image: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+        .hero-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #115e59 100%);
         }
-        .gradient-text {
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-image: linear-gradient(to right, #2a7f8e, #c5a059);
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
-<body class="font-sans text-slate-800 antialiased bg-slate-50">
+<body class="bg-gray-50 text-gray-800 font-sans">
 
-    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
-                <div class="flex-shrink-0 flex items-center cursor-pointer bg-white rounded-xl p-1 shadow-sm border border-slate-100" onclick="window.scrollTo(0,0)">
-                    <img src="Image_c1739ec173.png" alt="ReviveMedia & Recovery Logo" class="h-16 w-auto transition-transform hover:scale-105">
+            <div class="flex justify-between items-center h-28">
+                <div class="flex-shrink-0 flex items-center">
+                    <!-- Fixed Logo: Removed the white box and blend modes, just made it large -->
+                    <img src="Image_c1739ec173.png" alt="ReviveMedia Logo" class="h-24 w-auto object-contain">
                 </div>
-                
-                <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#services" class="text-slate-600 hover:text-brand-600 font-medium transition">Services</a>
-                    <a href="#pricing" class="text-slate-600 hover:text-brand-600 font-medium transition">Pricing</a>
-                    <a href="#youtube-feature" class="text-slate-600 hover:text-brand-600 font-medium transition">Instant View</a>
-                    <a href="#how-it-works" class="text-slate-600 hover:text-brand-600 font-medium transition">How It Works</a>
-                    <button onclick="openModal()" class="bg-slate-900 hover:bg-slate-800 text-white px-6 py-2.5 rounded-full font-medium transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
-                        Start a Project
+                    <a href="#services" class="text-gray-700 hover:text-teal-600 font-medium transition-colors">Services</a>
+                    <a href="#pricing" class="text-gray-700 hover:text-teal-600 font-medium transition-colors">Pricing</a>
+                    <a href="#quoter" class="text-gray-700 hover:text-teal-600 font-medium transition-colors">Get Quote</a>
+                    <a href="#reviews" class="text-gray-700 hover:text-teal-600 font-medium transition-colors">Reviews</a>
+                    <button onclick="openModal()" class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-2.5 rounded-full font-semibold transition-colors shadow-md">
+                        Start Project
                     </button>
                 </div>
-
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-slate-900 focus:outline-none p-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
-                        <i class="fa-solid fa-bars text-2xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full shadow-lg">
-            <div class="px-4 pt-2 pb-6 space-y-1 flex flex-col">
-                <a href="#services" class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50 rounded-md">Services</a>
-                <a href="#youtube-feature" class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50 rounded-md">Instant View</a>
-                <a href="#how-it-works" class="block px-3 py-3 text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50 rounded-md">How It Works</a>
-                <button onclick="openModal()" class="mt-4 w-full bg-slate-900 text-white px-6 py-3 rounded-md font-medium text-center">Start a Project</button>
             </div>
         </div>
     </nav>
 
-    <section class="hero-pattern pt-32 pb-20 md:pt-48 md:pb-32 px-4 relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-            <div class="absolute -top-[20%] -right-[10%] w-[50%] h-[50%] rounded-full bg-brand-500/10 blur-3xl"></div>
-            <div class="absolute top-[60%] -left-[10%] w-[40%] h-[40%] rounded-full bg-blue-500/10 blur-3xl"></div>
-        </div>
-
-        <div class="max-w-7xl mx-auto relative z-10 text-center">
-            <div class="inline-block mb-4 px-4 py-1.5 rounded-full bg-brand-500/20 border border-brand-500/30 text-brand-100 text-sm font-semibold tracking-wide backdrop-blur-sm">
-                VHS to Digital &bull; Professional Data Recovery
-            </div>
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6 leading-tight">
-                Your Memories & Data, <br />
-                <span class="gradient-text">Rescued & Ready.</span>
+    <!-- Hero Section -->
+    <div class="hero-bg text-white pt-36 pb-20 lg:pt-44 lg:pb-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
+                Don't Let Your Family Memories Fade Away
             </h1>
-            <p class="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-                We digitize your precious family tapes to modern formats and recover lost files from failing drives. Experience our exclusive <strong>Instant View</strong> YouTube service.
+            <p class="text-xl md:text-2xl text-teal-100 mb-10 max-w-3xl mx-auto leading-relaxed">
+                We professionally digitize your old VHS tapes and recover your precious data, so you can share them with generations to come.
             </p>
-            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
-                <button onclick="openModal('media')" class="bg-brand-500 hover:bg-brand-400 text-slate-900 px-8 py-4 rounded-full font-bold text-lg transition shadow-[0_0_20px_rgba(20,184,166,0.4)] hover:shadow-[0_0_25px_rgba(20,184,166,0.6)] transform hover:-translate-y-1 flex items-center">
-                    <i class="fa-solid fa-film mr-2"></i> Convert Media
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button onclick="openModal()" class="bg-white text-teal-700 hover:bg-gray-50 px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    Digitize My Tapes
                 </button>
-                <button onclick="openModal('data')" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-full font-bold text-lg transition backdrop-blur-md transform hover:-translate-y-1 flex items-center">
-                    <i class="fa-solid fa-hard-drive mr-2"></i> Recover Data
-                </button>
+                <a href="#quoter" class="bg-teal-700 hover:bg-teal-600 border border-teal-500 text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg text-center">
+                    Estimate My Cost
+                </a>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section id="youtube-feature" class="py-20 bg-white relative">
+    <!-- Video Preview Section -->
+    <div id="preview" class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-slate-900 rounded-3xl overflow-hidden shadow-2xl flex flex-col lg:flex-row">
-                <div class="lg:w-1/2 p-10 lg:p-16 flex flex-col justify-center">
-                    <div class="w-14 h-14 bg-red-600 rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg shadow-red-600/30">
-                        <i class="fa-brands fa-youtube text-3xl"></i>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">See The Magic: A Real Family Memory Restored</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">This is an actual digitization completed for <em>The Family Time Machine</em>. Watch how we bring 1997 back to crystal-clear life on modern devices!</p>
+            </div>
+            
+            <!-- Fixed Video: Removed complex absolute positioning so you can actually click play -->
+            <div class="max-w-4xl mx-auto">
+                <iframe class="w-full aspect-video rounded-2xl shadow-2xl" src="https://www.youtube.com/embed/Olpch-iWdzo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pricing Section -->
+    <div id="pricing" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Simple, Transparent Pricing</h2>
+                <p class="text-lg text-gray-600">No hidden fees. Just honest work to save your memories.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Video Conversion -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow">
+                    <div class="text-teal-600 text-4xl mb-4"><i class="fas fa-video"></i></div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Tape Digitization</h3>
+                    <p class="text-gray-500 mb-6">Convert VHS, VHS-C, Hi8, and Camcorder tapes to modern digital formats (MP4, MOV, AVI, etc.)</p>
+                    <div class="text-4xl font-extrabold text-gray-900 mb-6">$15 <span class="text-lg font-medium text-gray-500">/ tape</span></div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-gray-600"><i class="fas fa-check text-teal-500 mr-2"></i> Quality enhancement tracking</li>
+                        <li class="flex items-center text-gray-600"><i class="fas fa-check text-teal-500 mr-2"></i> Trimming blank footage</li>
+                        <li class="flex items-center text-gray-600"><i class="fas fa-check text-teal-500 mr-2"></i> Output to multiple formats</li>
+                    </ul>
+                </div>
+
+                <!-- Media Repair -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow border-t-4 border-t-teal-500">
+                    <div class="text-teal-600 text-4xl mb-4"><i class="fas fa-tools"></i></div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Tape Repair & Cleaning</h3>
+                    <p class="text-gray-500 mb-6">We'll fix wrinkled, snapped, or moldy tapes before attempting to digitize them.</p>
+                    <div class="text-4xl font-extrabold text-gray-900 mb-6">$20 <span class="text-lg font-medium text-gray-500">/ tape</span></div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-gray-600"><i class="fas fa-check text-teal-500 mr-2"></i> Broken tape splicing</li>
+                        <li class="flex items-center text-gray-600"><i class="fas fa-check text-teal-500 mr-2"></i> Chemical mold cleaning</li>
+                        <li class="flex items-start text-sm text-gray-400 mt-4"><i class="fas fa-info-circle mt-1 mr-2"></i> Note: Repair success is not guaranteed due to physical age, but we will always try our best!</li>
+                    </ul>
+                </div>
+
+                <!-- Delivery & Storage -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow">
+                    <div class="text-teal-600 text-4xl mb-4"><i class="fas fa-hdd"></i></div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Storage & Delivery</h3>
+                    <p class="text-gray-500 mb-6">How would you like your files returned? Provide your own drive for free, or let us provide one.</p>
+                    
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center justify-between text-gray-800 font-bold bg-teal-50 p-2 rounded">
+                            <span>Customer Provided Drive</span>
+                            <span class="text-teal-600">FREE</span>
+                        </li>
+                        <li class="flex items-center justify-between text-gray-600">
+                            <span>16GB Flash Drive (10-15 hrs)</span>
+                            <span class="font-bold">+$15</span>
+                        </li>
+                        <li class="flex items-center justify-between text-gray-600">
+                            <span>32GB Flash Drive (20-30 hrs)</span>
+                            <span class="font-bold">+$25</span>
+                        </li>
+                        <li class="flex items-center justify-between text-gray-600">
+                            <span>64GB Flash Drive (40-60 hrs)</span>
+                            <span class="font-bold">+$35</span>
+                        </li>
+                        <li class="flex items-center justify-between text-gray-600">
+                            <span>1TB Solid State Drive</span>
+                            <span class="font-bold">+$199</span>
+                        </li>
+                    </ul>
+                    <div class="pt-4 border-t border-gray-100">
+                        <p class="text-gray-700 font-semibold mb-1"><i class="fas fa-car text-teal-500 mr-2"></i> Local Pickup Service</p>
+                        <p class="text-sm text-gray-500">Don't want to drive? We'll come pick up your items! <strong>$20 Flat Rate</strong>.</p>
                     </div>
-                    <h2 class="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-                        The Instant View Experience
-                    </h2>
-                    <p class="text-slate-300 text-lg mb-6 leading-relaxed">
-                        Don't wait for the mail. The moment your VHS or DVD conversion is complete, we upload it to a private, unlisted YouTube channel created just for you.
-                    </p>
-                    <ul class="space-y-4 text-slate-300">
-                        <li class="flex items-start">
-                            <i class="fa-solid fa-circle-check text-brand-500 mt-1 mr-3"></i>
-                            <span><strong>Watch Anywhere:</strong> View on your Smart TV, phone, or tablet immediately.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fa-solid fa-circle-check text-brand-500 mt-1 mr-3"></i>
-                            <span><strong>Easy Sharing:</strong> Just send the private link to family members across the globe.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fa-solid fa-circle-check text-brand-500 mt-1 mr-3"></i>
-                            <span><strong>Total Privacy:</strong> Videos are unlisted and completely secure.</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="lg:w-1/2 bg-slate-800 p-8 lg:p-12 flex items-center justify-center">
-                    <div class="w-full aspect-video rounded-xl overflow-hidden shadow-2xl border-4 border-slate-700">
-                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/Olpch-iWdzo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section id="pricing" class="py-20 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-4">Simple, Transparent Pricing</h2>
+    <!-- Interactive Price Quoter Section -->
+    <div id="quoter" class="py-20 bg-white border-t border-gray-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Instant Price Estimator</h2>
+                <p class="text-lg text-gray-600">Adjust the options below to get an instant quote for your project.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white p-8 rounded-3xl shadow-lg">
-                    <h3 class="text-xl font-bold mb-6 text-brand-600 border-b pb-4">Media Digitization</h3>
-                    <ul class="space-y-3">
-                        <li class="flex justify-between"><span>VHS/Camcorder (1-9 tapes)</span> <span>$20/tape</span></li>
-                        <li class="flex justify-between"><span>VHS/Camcorder (10-19 tapes)</span> <span>$18/tape</span></li>
-                        <li class="flex justify-between"><span>VHS/Camcorder (20+ tapes)</span> <span>$15/tape</span></li>
-                        <li class="flex justify-between"><span>DVD/MiniDVD to Digital</span> <span>$12/disc</span></li>
-                        <li class="text-sm text-slate-500 mt-2 italic">*Output formats: MP4, MOV, AVI, and more.</li>
-                    </ul>
-                </div>
-                <div class="bg-white p-8 rounded-3xl shadow-lg">
-                    <h3 class="text-xl font-bold mb-6 text-brand-600 border-b pb-4">Repair & Data Recovery</h3>
-                    <ul class="space-y-3">
-                        <li class="flex justify-between"><span>Basic Tape Repair/Splicing</span> <span>$15/tape</span></li>
-                        <li class="flex justify-between"><span>Mold/Mildew Cleaning</span> <span>$25/tape</span></li>
-                        <li class="flex justify-between"><span>Data Recovery Diagnostic</span> <span>$35</span></li>
-                        <li class="flex justify-between"><span>Advanced Data Recovery</span> <span>$199+</span></li>
-                        <li class="text-xs text-slate-400 mt-2 italic">*Repair service is best-effort; not guaranteed.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="mt-12 bg-white p-8 rounded-3xl shadow-lg border border-brand-100">
-                <h4 class="font-bold text-slate-900 mb-4">🏠 Local Pickup Service</h4>
-                <p class="text-slate-600">Can't make it to us? We offer a local pickup service in the Pleasant Hill/Des Moines area. <strong>Fee: $25 flat rate</strong> for pickup and drop-off coordination.</p>
-            </div>
-        </div>
-    </section>
+            
+            <div class="bg-gray-50 rounded-3xl shadow-xl p-8 border border-gray-200">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Inputs -->
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Number of Tapes to Digitize ($15/ea)</label>
+                            <input type="number" id="calc-tapes" min="0" value="0" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500" oninput="calculateTotal()">
+                        </div>
 
-    <section id="reviews" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-4">Loved by Our Clients</h2>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100">
-                    <div class="flex text-accent-500 mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="text-slate-600 mb-6 italic">"Kory saved our family wedding tapes! The quality was amazing, and getting the private YouTube link to share was so easy."</p>
-                    <div class="font-bold text-slate-900">- Sarah J.</div>
-                </div>
-                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100">
-                    <div class="flex text-accent-500 mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="text-slate-600 mb-6 italic">"My external hard drive stopped working and I was panicked. ReviveMedia recovered 10 years of my photos. True to their word: no data, no fee!"</p>
-                    <div class="font-bold text-slate-900">- Mark D.</div>
-                </div>
-                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100">
-                    <div class="flex text-accent-500 mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="text-slate-600 mb-6 italic">"The local pickup service in Pleasant Hill was a lifesaver. Kory made the whole process completely stress-free."</p>
-                    <div class="font-bold text-slate-900">- Jessica R.</div>
-                </div>
-            </div>
-        </div>
-    </section>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Tapes Needing Repair/Mold Cleaning ($20/ea)</label>
+                            <input type="number" id="calc-repairs" min="0" value="0" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500" oninput="calculateTotal()">
+                        </div>
 
-    <footer class="bg-slate-950 pt-16 pb-8 text-slate-400">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
-                <div class="col-span-1 md:col-span-2">
-                    <div class="flex items-center mb-6">
-                        <div class="bg-white p-2 rounded-xl inline-block">
-                            <img src="Image_c1739ec173.png" alt="ReviveMedia Logo" class="h-24 w-auto object-contain" />
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Storage Option</label>
+                            <select id="calc-storage" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500" onchange="calculateTotal()">
+                                <option value="0">I will provide my own USB/Drive ($0 - FREE)</option>
+                                <option value="15">ReviveMedia Provides: 16GB Flash Drive (+$15)</option>
+                                <option value="25">ReviveMedia Provides: 32GB Flash Drive (+$25)</option>
+                                <option value="35">ReviveMedia Provides: 64GB Flash Drive (+$35)</option>
+                                <option value="199">ReviveMedia Provides: 1TB Solid State Drive (+$199)</option>
+                            </select>
+                        </div>
+
+                        <div class="flex items-center p-4 bg-white border border-gray-200 rounded-lg">
+                            <input type="checkbox" id="calc-pickup" class="h-5 w-5 text-teal-600 border-gray-300 rounded focus:ring-teal-500" onchange="calculateTotal()">
+                            <label for="calc-pickup" class="ml-3 block text-sm font-medium text-gray-700">
+                                Include Local Item Pickup (+$20)
+                            </label>
                         </div>
                     </div>
-                    <p class="mb-6 max-w-sm">Saving the past and securing the future. Professional media digitization and logical data recovery services.</p>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Contact</h4>
-                    <ul class="space-y-3">
-                        <li class="flex items-start"><i class="fa-solid fa-user mt-1 mr-3 text-slate-500"></i> Kory Fuerstenberg</li>
-                        <li class="flex items-start"><i class="fa-solid fa-envelope mt-1 mr-3 text-slate-500"></i> <a href="mailto:revivemediarecovery@gmail.com" class="hover:text-brand-400 transition">revivemediarecovery@gmail.com</a></li>
-                        <li class="flex items-start"><i class="fa-solid fa-phone mt-1 mr-3 text-slate-500"></i> (515) 216-4020</li>
-                        <li class="flex items-start"><i class="fa-solid fa-location-dot mt-1 mr-3 text-slate-500"></i> 2255 SE 60th St.<br>Pleasant Hill, IA 50327</li>
-                    </ul>
+
+                    <!-- Output Total -->
+                    <div class="bg-teal-700 text-white rounded-2xl p-8 flex flex-col justify-center items-center shadow-inner relative overflow-hidden">
+                        <div class="absolute top-0 right-0 -mr-8 -mt-8 w-32 h-32 rounded-full bg-teal-600 opacity-50"></div>
+                        
+                        <p class="text-teal-100 text-lg font-medium mb-2 relative z-10">Your Estimated Total</p>
+                        <h3 class="text-6xl font-extrabold mb-6 relative z-10" id="calc-total-display">$0</h3>
+                        
+                        <button onclick="transferQuoteToModal()" class="w-full bg-white text-teal-700 hover:bg-gray-100 px-6 py-3 rounded-lg font-bold transition-colors shadow relative z-10">
+                            Start This Project
+                        </button>
+                        <p class="text-xs text-teal-200 mt-4 text-center relative z-10">*Estimate only. Final price confirmed upon physical inspection of items.</p>
+                    </div>
                 </div>
             </div>
-            <div class="border-t border-slate-800 pt-8 text-sm text-center">
-                <p>&copy; 2026 ReviveMedia & Recovery. All rights reserved.</p>
+        </div>
+    </div>
+
+    <!-- Reviews Section -->
+    <div id="reviews" class="py-20 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Client Success Stories</h2>
+                <p class="text-lg text-gray-600">See what families are saying about their recovered memories.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="flex text-yellow-400 mb-3">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 italic mb-4">"I had a box of 15 VHS tapes sitting in my basement for 20 years. I used the pickup service, and within a week I was crying watching my kids' first steps on my iPad. Incredible service!"</p>
+                    <p class="text-gray-900 font-bold">- Sarah M.</p>
+                    <p class="text-xs text-teal-600 font-semibold uppercase tracking-wide mt-1">Video Digitization & Pickup</p>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="flex text-yellow-400 mb-3">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 italic mb-4">"A couple of my old camcorder tapes were visibly moldy and I thought they were ruined forever. They managed to clean them and salvage almost the entire recording. So grateful!"</p>
+                    <p class="text-gray-900 font-bold">- James T.</p>
+                    <p class="text-xs text-teal-600 font-semibold uppercase tracking-wide mt-1">Tape Repair & Cleaning</p>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="flex text-yellow-400 mb-3">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 italic mb-4">"Super transparent pricing and easy to work with. I supplied my own hard drive and there were no hidden fees at all. Highly recommend for any data recovery or VHS conversion."</p>
+                    <p class="text-gray-900 font-bold">- Emily R.</p>
+                    <p class="text-xs text-teal-600 font-semibold uppercase tracking-wide mt-1">Video Digitization</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-6 md:mb-0">
+                <img src="Image_c1739ec173.png" alt="ReviveMedia Logo" class="h-16 w-auto object-contain">
+            </div>
+            <div class="text-center md:text-right">
+                <p class="text-gray-400">Preserve. Restore. Connect.</p>
+                <p class="text-sm text-gray-500 mt-2">&copy; 2026 ReviveMedia & Recovery. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <div id="contactModal" class="fixed inset-0 z-[100] hidden overflow-y-auto p-4">
-        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
-        <div class="relative min-h-screen flex items-center justify-center">
-            <div class="bg-white rounded-2xl shadow-2xl w-full max-w-lg p-8 my-8">
-                <h3 class="text-xl font-bold mb-4">Start Your Project</h3>
-                <form id="intakeForm" class="space-y-4 text-left">
-                    <div>
-                        <label class="block text-sm font-medium text-slate-700">Service</label>
-                        <select id="serviceType" class="w-full border border-slate-300 p-2 rounded-lg">
-                            <option value="media">Media Digitization</option>
-                            <option value="data">Data Recovery</option>
-                            <option value="both">Both</option>
-                        </select>
+    <!-- Intake Form Modal -->
+    <div id="intakeModal" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true" onclick="closeModal()"></div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-2xl sm:w-full">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="flex justify-between items-center mb-5 border-b pb-4">
+                        <h3 class="text-2xl leading-6 font-bold text-gray-900" id="modal-title">Start Your Project</h3>
+                        <button onclick="closeModal()" class="text-gray-400 hover:text-gray-500">
+                            <i class="fas fa-times text-xl"></i>
+                        </button>
                     </div>
-                    <input type="text" placeholder="Name" class="w-full border border-slate-300 p-2 rounded-lg" required>
-                    <input type="email" placeholder="Email" class="w-full border border-slate-300 p-2 rounded-lg" required>
                     
-                    <div class="flex items-center">
-                        <input id="pickupRequired" type="checkbox" class="mr-2" onchange="document.getElementById('pickupDetails').classList.toggle('hidden', !this.checked)">
-                        <label for="pickupRequired" class="text-sm">Request Local Pickup ($25)</label>
-                    </div>
-                    <input id="pickupDetails" type="text" placeholder="Preferred Date/Time for Pickup" class="w-full border border-slate-300 p-2 rounded-lg hidden">
-                    
-                    <textarea placeholder="Please describe your project (Number of tapes, type of media/device, etc.)" class="w-full border border-slate-300 p-2 rounded-lg h-24" required></textarea>
-                    
-                    <!-- Legal Section -->
-                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
-                        <h4 class="font-bold text-sm mb-2 text-slate-900">Service Agreement & Waiver</h4>
-                        <p class="text-xs text-slate-600 mb-3 italic">I understand that tape repair is a "best-effort" service and not guaranteed. For data recovery, I hold ReviveMedia harmless for any hardware failures during recovery attempts.</p>
-                        <div class="flex items-start">
-                            <input id="legalAgreement" type="checkbox" class="mr-2 mt-1" required>
-                            <label for="legalAgreement" class="text-xs text-slate-700">I acknowledge and agree to the terms above.</label>
+                    <form id="projectForm" class="space-y-6 max-h-[70vh] overflow-y-auto pr-2">
+                        <!-- Contact Info -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">First Name</label>
+                                <input type="text" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-teal-500 focus:border-teal-500">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Last Name</label>
+                                <input type="text" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-teal-500 focus:border-teal-500">
+                            </div>
                         </div>
-                        <input type="text" placeholder="Type Full Name to Sign" class="w-full border border-slate-300 p-2 rounded-lg mt-3 text-sm" required>
-                    </div>
 
-                    <button type="submit" class="w-full bg-brand-600 text-white py-3 rounded-lg font-bold hover:bg-brand-700 transition">Submit Request</button>
-                </form>
+                        <!-- Project Details -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">What services do you need?</label>
+                            <div class="space-y-2">
+                                <label class="inline-flex items-center">
+                                    <input type="checkbox" class="rounded border-gray-300 text-teal-600 shadow-sm focus:border-teal-300 focus:ring focus:ring-teal-200 focus:ring-opacity-50">
+                                    <span class="ml-2 text-gray-700">Tape Digitization (VHS, Camcorder)</span>
+                                </label><br>
+                                <label class="inline-flex items-center">
+                                    <input type="checkbox" class="rounded border-gray-300 text-teal-600 shadow-sm focus:border-teal-300 focus:ring focus:ring-teal-200 focus:ring-opacity-50">
+                                    <span class="ml-2 text-gray-700">Tape Repair / Mold Cleaning</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Estimated Quantity of Items</label>
+                            <input type="number" id="modal-qty" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-teal-500 focus:border-teal-500" placeholder="e.g., 5">
+                        </div>
+
+                        <!-- Logistics -->
+                        <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                            <label class="block text-sm font-bold text-gray-900 mb-2">How will we receive your items?</label>
+                            <div class="mt-2 space-y-3">
+                                <label class="flex items-center">
+                                    <input type="radio" name="logistics" value="dropoff" class="text-teal-600 focus:ring-teal-500" checked onchange="togglePickupDate(false)">
+                                    <span class="ml-2 text-gray-700">I will drop them off (Free)</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="logistics" value="pickup" class="text-teal-600 focus:ring-teal-500" onchange="togglePickupDate(true)">
+                                    <span class="ml-2 text-gray-700">Local Pickup Service (+$20)</span>
+                                </label>
+                            </div>
+                            
+                            <div id="pickup-scheduling" class="mt-4 hidden pl-6 border-l-2 border-teal-500">
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Preferred Pickup Date & Time</label>
+                                <input type="datetime-local" class="block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-teal-500 focus:border-teal-500">
+                                <p class="text-xs text-gray-500 mt-1">We will contact you to confirm this time.</p>
+                            </div>
+                        </div>
+
+                        <!-- Legal Agreement Section -->
+                        <div class="bg-red-50 p-4 rounded-lg border border-red-100">
+                            <h4 class="text-sm font-bold text-red-800 mb-2"><i class="fas fa-exclamation-triangle mr-2"></i>Service & Liability Agreement</h4>
+                            <div class="text-xs text-gray-700 space-y-2 h-32 overflow-y-auto bg-white p-3 border border-gray-200 rounded mb-3">
+                                <p><strong>1. Media Degradation:</strong> Client acknowledges that magnetic tape (VHS, Hi8, etc.) degrades over time. ReviveMedia & Recovery is not responsible for audio/video loss inherent to the physical condition of the provided media.</p>
+                                <p><strong>2. Repair Limitations:</strong> Tape repair and mold cleaning are attempted on a best-effort basis. Success is not guaranteed, and repair fees apply regardless of the final digitization quality.</p>
+                                <p><strong>3. Liability Limit:</strong> In the rare event of damage or loss caused while media is in our possession, liability is strictly limited to the replacement cost of blank media of an equivalent type and length. We hold no liability for the sentimental or intrinsic value of the content.</p>
+                                <p><strong>4. Copyright:</strong> Client certifies they own the copyright or have permission to duplicate the provided materials.</p>
+                            </div>
+                            <label class="flex items-start">
+                                <input type="checkbox" id="legal-checkbox" required class="mt-1 rounded border-gray-300 text-teal-600 shadow-sm focus:border-teal-300 focus:ring focus:ring-teal-200 focus:ring-opacity-50">
+                                <span class="ml-2 text-sm text-gray-700 font-medium">I have read and agree to the Service & Liability Agreement.</span>
+                            </label>
+                            <div class="mt-3">
+                                <label class="block text-xs font-medium text-gray-700">Digital Signature (Type your full name)</label>
+                                <input type="text" id="legal-signature" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-1.5 px-3 text-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500" placeholder="John Doe">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse border-t">
+                    <button type="button" onclick="submitForm()" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-teal-600 text-base font-medium text-white hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 sm:ml-3 sm:w-auto sm:text-sm">
+                        Submit Request
+                    </button>
+                    <button type="button" onclick="closeModal()" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                        Cancel
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 
     <script>
-        const modal = document.getElementById('contactModal');
-        function openModal(t) { 
-            modal.classList.remove('hidden'); 
-            if(t) document.getElementById('serviceType').value = t;
+        // Modal functions
+        function openModal() {
+            document.getElementById('intakeModal').classList.remove('hidden');
         }
-        function closeModal() { modal.classList.add('hidden'); }
-        
-        document.getElementById('intakeForm').onsubmit = (e) => {
-            e.preventDefault();
-            alert('Thank you! Your request has been submitted. Kory will reach out shortly.');
-            closeModal();
-        };
 
-        window.onscroll = () => {
-            document.getElementById('navbar').classList.toggle('shadow-md', window.scrollY > 10);
-        };
+        function closeModal() {
+            document.getElementById('intakeModal').classList.add('hidden');
+        }
+
+        function togglePickupDate(show) {
+            const dateDiv = document.getElementById('pickup-scheduling');
+            if(show) {
+                dateDiv.classList.remove('hidden');
+            } else {
+                dateDiv.classList.add('hidden');
+            }
+        }
+
+        function submitForm() {
+            const checkbox = document.getElementById('legal-checkbox');
+            const signature = document.getElementById('legal-signature');
+            
+            if(!checkbox.checked || signature.value.trim() === '') {
+                alert('Please check the agreement box and provide your digital signature to proceed.');
+                return;
+            }
+            
+            alert('Thank you! Your project request has been submitted. We will be in touch shortly.');
+            closeModal();
+        }
+
+        // Price Quoter Logic
+        function calculateTotal() {
+            const tapes = parseInt(document.getElementById('calc-tapes').value) || 0;
+            const repairs = parseInt(document.getElementById('calc-repairs').value) || 0;
+            const storageCost = parseInt(document.getElementById('calc-storage').value) || 0;
+            const pickupCost = document.getElementById('calc-pickup').checked ? 20 : 0;
+
+            const total = (tapes * 15) + (repairs * 20) + storageCost + pickupCost;
+
+            document.getElementById('calc-total-display').innerText = '$' + total;
+        }
+
+        function transferQuoteToModal() {
+            const tapes = parseInt(document.getElementById('calc-tapes').value) || 0;
+            if (tapes > 0) {
+                document.getElementById('modal-qty').value = tapes;
+            }
+            if (document.getElementById('calc-pickup').checked) {
+                const radios = document.getElementsByName('logistics');
+                for (let radio of radios) {
+                    if (radio.value === 'pickup') {
+                        radio.checked = true;
+                        togglePickupDate(true);
+                    }
+                }
+            }
+            openModal();
+        }
     </script>
 </body>
 </html>
